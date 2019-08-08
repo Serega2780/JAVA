@@ -1,5 +1,11 @@
 package servlet;
 
+import DAO.UserDaoFactory;
+import DAO.UserDaoFactoryImplJDBC;
+import DAO.UserDaoImplJDBC;
+import model.User;
+
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -11,11 +17,19 @@ import java.io.IOException;
 public class CreateServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        ServletActions.showNewForm(request, response);
+        RequestDispatcher dispatcher = request.getRequestDispatcher("user-form.jsp");
+        dispatcher.forward(request, response);
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        ServletActions.insertUser(request, response,true);
+        //   ServletActions.insertUser(request, response,true);
+        String name = request.getParameter("name");
+        String email = request.getParameter("email");
+        String country = request.getParameter("country");
+        User newUser = new User(name, email, country);
+        UserDaoFactory.getDaoFactory().createDAO().insertUser(newUser);
+        response.sendRedirect("list");
+        // new UserDaoImplJDBC().insertUser(newUser);
     }
 }
