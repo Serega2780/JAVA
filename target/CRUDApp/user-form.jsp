@@ -20,7 +20,7 @@
     <form action="update" method="post">
         </c:if>
         <c:if test="${user == null}">
-        <form action="insertUser" method="post">
+        <form action="insert" method="post">
             </c:if>
             <table border="1" cellpadding="5">
                 <caption>
@@ -34,13 +34,13 @@
                     </h2>
                 </caption>
                 <c:if test="${user != null}">
-                    <input type="hidden" name="id" value="<c:out value='${user.id}' />"/>
+                    <input type="hidden" name="id" value="<c:out value="${user.id}" />"/>
                 </c:if>
                 <tr>
                     <th>User Name:</th>
                     <td>
                         <input type="text" name="name" size="45"
-                               value="<c:out value='${user.name}' />"
+                               value="<c:out value="${user.name}" />"
                         />
                     </td>
                 </tr>
@@ -48,7 +48,7 @@
                     <th>User Email:</th>
                     <td>
                         <input type="text" name="email" size="45"
-                               value="<c:out value='${user.email}' />"
+                               value="<c:out value="${user.email}" />"
                         />
                     </td>
                 </tr>
@@ -56,17 +56,18 @@
                     <th>Country:</th>
                     <td>
                         <input type="text" name="country" size="15"
-                               value="<c:out value='${user.country}' />"
+                               value="<c:out value="${user.country}" />"
                         />
                     </td>
                 </tr>
                 <tr>
                     <td colspan="2" align="center">
-                        <input type="submit" value="Save"/>
+                        <button type="submit">Save</button>
                     </td>
                 </tr>
             </table>
         </form>
+    </form>
 </div>
 </body>
 </html>

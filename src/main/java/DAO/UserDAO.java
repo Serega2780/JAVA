@@ -1,6 +1,10 @@
 package DAO;
 
 import model.User;
+import org.hibernate.Query;
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
 import service.UserService;
 
 import java.sql.Connection;
@@ -11,6 +15,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class UserDAO {
+    private Session session;
     private static final String INSERT_USERS_SQL = "INSERT INTO users" + "  (name, email, country) VALUES " +
             " (?, ?, ?);";
 
@@ -23,10 +28,18 @@ public class UserDAO {
             "country varchar(256), primary key (id));";
     private static final String DROP_TABLE_SQL = "DROP TABLE IF EXISTS users;";
 
-    private static final Connection connection = UserService.getConnection();
+
+    private static final String SELECT_USER_BY_ID_HIBERNATE = "FROM User WHERE id = :brand";
+    private static final String DELETE_USERS_HIBERNATE = "DELETE FROM User WHERE id = :id";
+
+    private static final Connection connection = UserService.getInstance().getConnection();
 
     public UserDAO() {
 
+    }
+
+    public UserDAO(Session session) {
+        this.session = session;
     }
 
     public void createTable() {
@@ -38,7 +51,7 @@ public class UserDAO {
         }
     }
 
-    public void dropTable() throws SQLException {
+    public void dropTable() {
         System.out.println(DROP_TABLE_SQL);
         try (PreparedStatement preparedStatement = connection.prepareStatement(DROP_TABLE_SQL)) {
             preparedStatement.executeUpdate();
@@ -61,6 +74,25 @@ public class UserDAO {
         }
     }
 
+
+    public void insertUserH(User user) {
+        Transaction transaction = session.beginTransaction();
+        session.save(user);
+        transaction.commit();
+        session.close();
+    }
+
+    public User selectUserH(int id) {
+        User user;
+        Transaction transaction = session.beginTransaction();
+        Query query = session.createQuery(SELECT_USER_BY_ID_HIBERNATE);
+        query.setParameter("id", id);
+        user = (User) query.list().get(0);
+        transaction.commit();
+        session.close();
+        return user;
+    }
+
     public User selectUser(int id) {
         User user = null;
 
@@ -81,8 +113,6 @@ public class UserDAO {
     }
 
     public List<User> selectAllUsers() {
-
-
         List<User> users = new ArrayList<>();
 
         try (PreparedStatement preparedStatement = connection.prepareStatement(SELECT_ALL_USERS);) {
@@ -101,17 +131,39 @@ public class UserDAO {
         return users;
     }
 
-    public boolean deleteUser(int id) throws SQLException {
-        boolean rowDeleted;
+    public List<User> selectAllUsersH() {
+        Transaction transaction = session.beginTransaction();
+        List<User> allCars = session.createQuery("FROM User").list();
+        transaction.commit();
+        session.close();
+        return allCars;
+    }
+
+    public boolean deleteUser(int id) {
+        boolean rowDeleted = false;
         try (PreparedStatement statement = connection.prepareStatement(DELETE_USERS_SQL)) {
             statement.setInt(1, id);
             rowDeleted = statement.executeUpdate() > 0;
+        } catch (SQLException e) {
+
         }
         return rowDeleted;
     }
 
-    public boolean updateUser(User user) throws SQLException {
-        boolean rowUpdated;
+    public boolean deleteUserH(int id) {
+        boolean rowDeleted = false;
+        Transaction transaction = session.beginTransaction();
+        Query query = session.createQuery(DELETE_USERS_HIBERNATE);
+        query.setParameter("id", id);
+        rowDeleted = query.executeUpdate() > 0;
+        transaction.commit();
+        session.close();
+        return rowDeleted;
+
+    }
+
+    public boolean updateUser(User user) {
+        boolean rowUpdated = false;
         try (PreparedStatement statement = connection.prepareStatement(UPDATE_USERS_SQL)) {
             statement.setString(1, user.getName());
             statement.setString(2, user.getEmail());
@@ -119,8 +171,17 @@ public class UserDAO {
             statement.setInt(4, user.getId());
 
             rowUpdated = statement.executeUpdate() > 0;
+        } catch (SQLException e) {
+
         }
         return rowUpdated;
+    }
+
+    public void updateUserH(User user) {
+        Transaction transaction = session.beginTransaction();
+        session.saveOrUpdate(user);
+        transaction.commit();
+        session.close();
     }
 
 }

@@ -40,8 +40,9 @@ public class UserService {
         return this.userDAO;
     }
 
-    public static Connection getConnection() {
-        return UserService.getInstance().connection;
+
+    public Connection getConnection() {
+        return this.connection;
     }
 
     private static Connection getMySQLConnection() {

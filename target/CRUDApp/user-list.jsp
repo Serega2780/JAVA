@@ -25,16 +25,16 @@
             <th>Country</th>
             <th>Actions</th>
         </tr>
-        <c:forEach var="user" items="${listUser}">
+        <c:forEach items="${listUser}" var="user" >
             <tr>
-                <td><c:out value="${user.id}"/></td>
-                <td><c:out value="${user.name}"/></td>
-                <td><c:out value="${user.email}"/></td>
-                <td><c:out value="${user.country}"/></td>
+                <td>${user.id}</td>
+                <td>${user.name}</td>
+                <td>${user.email}</td>
+                <td>${user.country}</td>
                 <td>
-                    <a href="edit?id=<c:out value='${user.id}' />">Edit</a>
+                    <a href="edit?id=<c:out value="${user.id}" />">Edit</a>
                     &nbsp;&nbsp;&nbsp;&nbsp;
-                    <a href="delete?id=<c:out value='${user.id}' />">Delete</a>
+                    <a href="delete?id=<c:out value="${user.id}" />">Delete</a>
                 </td>
             </tr>
         </c:forEach>
