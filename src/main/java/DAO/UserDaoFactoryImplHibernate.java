@@ -7,15 +7,15 @@ import org.hibernate.service.ServiceRegistry;
 import service.DBHelper;
 
 public class UserDaoFactoryImplHibernate extends UserDaoFactory {
-    private UserDAO userDAO;
+    private UserDaoImplHibernate userDAOImplHibernate;
     private static SessionFactory sessionFactory;
 
     @Override
-    public UserDAO createDAO() {
-        if (this.userDAO == null) {
-            this.userDAO = new UserDaoImplHibernate(getSessionFactory().openSession());
+    public UserDaoImplHibernate createDAO() {
+        if (this.userDAOImplHibernate == null) {
+            this.userDAOImplHibernate = new UserDaoImplHibernate(getSessionFactory().openSession());
         }
-        return this.userDAO;
+        return this.userDAOImplHibernate;
     }
 
     private static SessionFactory createSessionFactory() {

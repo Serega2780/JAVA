@@ -4,9 +4,13 @@ servlet\CreateServlet.class
 servlet\UpdateServlet.class
 servlet\HomeController.class
 DAO\UserDaoFactoryImplJDBC.class
-DAO\UserDAO.class
 DAO\UserDaoFactoryImplHibernate.class
+DAO\UserDaoImplHibernate.class
+servlet\UserServlet.class
+servlet\ListServlet.class
+servlet\AdminServlet.class
+DAO\UserDAO.class
+servlet\FilterServlet.class
 model\User.class
 service\DBHelper.class
 DAO\UserDaoFactory.class
-DAO\UserDaoImplHibernate.class

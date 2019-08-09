@@ -1,13 +1,13 @@
 package DAO;
 
 public class UserDaoFactoryImplJDBC extends UserDaoFactory {
-    private UserDAO userDAO;
+    private UserDaoImplJDBC userDaoImplJDBC;
 
     @Override
-    public UserDAO createDAO() {
-        if (this.userDAO == null) {
-            this.userDAO = new UserDaoImplJDBC();
+    public UserDaoImplJDBC createDAO() {
+        if (this.userDaoImplJDBC == null) {
+            this.userDaoImplJDBC = new UserDaoImplJDBC();
         }
-        return this.userDAO;
+        return this.userDaoImplJDBC;
     }
 }

@@ -25,11 +25,13 @@ public class CreateServlet extends HttpServlet {
             throws ServletException, IOException {
         //   ServletActions.insertUser(request, response,true);
         String name = request.getParameter("name");
+        String password = request.getParameter("password");
+        String role = request.getParameter("role");
         String email = request.getParameter("email");
         String country = request.getParameter("country");
-        User newUser = new User(name, email, country);
+        User newUser = new User(name, password, role, email, country);
         UserDaoFactory.getDaoFactory().createDAO().insertUser(newUser);
-        response.sendRedirect("list");
+        response.sendRedirect("admin");
         // new UserDaoImplJDBC().insertUser(newUser);
     }
 }

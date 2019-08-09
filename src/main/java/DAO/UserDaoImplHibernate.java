@@ -10,6 +10,8 @@ import java.util.List;
 public class UserDaoImplHibernate implements UserDAO {
 
     private static final String SELECT_USER_BY_ID_HIBERNATE = "FROM User WHERE id = :id";
+    private static final String SELECT_NOT_ADMINS = "FROM User WHERE role = :role";
+    private static final String SELECT_USER_BY_ROLE = "FROM User WHERE name = :name AND password = :password";
     private static final String DELETE_USERS_HIBERNATE = "DELETE FROM User WHERE id = :id";
     private Session session;
 
@@ -42,12 +44,35 @@ public class UserDaoImplHibernate implements UserDAO {
     @Override
     public List<User> selectAllUsers() {
         Transaction transaction = session.beginTransaction();
-        List<User> allCars = session.createQuery("FROM User").list();
+        List<User> allUsers = session.createQuery("FROM User").list();
         transaction.commit();
         session.close();
-        return allCars;
+        return allUsers;
     }
 
+    @Override
+    public List<User> selectNotAdmins() {
+        Transaction transaction = session.beginTransaction();
+        Query query = session.createQuery(SELECT_NOT_ADMINS);
+        query.setParameter("role", "user");
+        List<User> notAdmins = query.list();
+        transaction.commit();
+        session.close();
+        return notAdmins;
+    }
+
+    @Override
+    public String selectUserByRole(String name, String password) {
+        User user;
+        Transaction transaction = session.beginTransaction();
+        Query query = session.createQuery(SELECT_USER_BY_ROLE);
+        query.setParameter("name", name);
+        query.setParameter("password", password);
+        user = (User) query.list().get(0);
+        transaction.commit();
+        session.close();
+        return user.getRole();
+    }
 
     @Override
     public boolean deleteUser(int id) {

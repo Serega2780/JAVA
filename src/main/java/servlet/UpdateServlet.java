@@ -28,12 +28,15 @@ public class UpdateServlet extends HttpServlet {
 
         int id = Integer.parseInt(request.getParameter("id"));
         String name = request.getParameter("name");
+        String password = request.getParameter("password");
+        String role = request.getParameter("role");
         String email = request.getParameter("email");
         String country = request.getParameter("country");
 
-        User user = new User(id, name, email, country);
+        User user = new User(id, name, password, role, email, country);
         UserDaoFactory.getDaoFactory().createDAO().updateUser(user);
-        response.sendRedirect("list");
+        response.sendRedirect("admin");
+
 
     }
 }

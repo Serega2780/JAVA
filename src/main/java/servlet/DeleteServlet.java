@@ -17,7 +17,7 @@ public class DeleteServlet extends HttpServlet {
         //ServletActions.deleteUser(request, response,true);
         int id = Integer.parseInt(request.getParameter("id"));
         UserDaoFactory.getDaoFactory().createDAO().deleteUser(id);
-        response.sendRedirect("list");
-
+        response.sendRedirect("admin");
     }
+
 }

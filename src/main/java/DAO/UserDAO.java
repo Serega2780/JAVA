@@ -12,6 +12,10 @@ public interface UserDAO {
 
     List<User> selectAllUsers();
 
+    List<User> selectNotAdmins();
+
+    String selectUserByRole(String name, String password);
+
     boolean deleteUser(int id);
 
     void updateUser(User user);

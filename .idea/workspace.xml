@@ -10,23 +10,35 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5b077b4f-0514-48a5-82b4-6fe674da8ff3" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/262789b5-c6fb-4151-ae31-5cff930ce768.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CRUDApp.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/service/UserService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/service/UserServiceHibernate.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/servlet/ServletActions.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/servlet/UserServlet.java" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/servlet/AdminServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/servlet/FilterServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/servlet/ListServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/servlet/UserServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/user-access.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/DAO/UserDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DAO/UserDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/DAO/UserDaoFactoryImplHibernate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DAO/UserDaoFactoryImplHibernate.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/DAO/UserDaoFactoryImplJDBC.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DAO/UserDaoFactoryImplJDBC.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/DAO/UserDaoImplHibernate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DAO/UserDaoImplHibernate.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/DAO/UserDaoImplJDBC.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DAO/UserDaoImplJDBC.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/service/DBHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/service/DBHelper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/servlet/CreateServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/servlet/CreateServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/servlet/DeleteServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/servlet/DeleteServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/servlet/HomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/servlet/HomeController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/servlet/UpdateServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/servlet/UpdateServlet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/user-form.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/user-form.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/user-list.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/user-list.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/CRUDApp.war" beforeDir="false" afterPath="$PROJECT_DIR$/target/CRUDApp.war" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/CRUDApp/META-INF/MANIFEST.MF" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/CRUDApp/WEB-INF/classes/service/UserService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/CRUDApp/WEB-INF/classes/servlet/UserServlet.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/CRUDApp/WEB-INF/lib/mysql-connector-java-8.0.16.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/CRUDApp/WEB-INF/lib/protobuf-java-3.6.1.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/service/UserService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/servlet/UserServlet.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-archiver/pom.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/CRUDApp/WEB-INF/classes/DAO/UserDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/CRUDApp/WEB-INF/classes/DAO/UserDAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/CRUDApp/WEB-INF/classes/model/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/CRUDApp/WEB-INF/classes/model/User.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/CRUDApp/user-form.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/CRUDApp/user-form.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/CRUDApp/user-list.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/CRUDApp/user-list.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/DAO/UserDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/DAO/UserDAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/model/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/User.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
     </list>
@@ -64,6 +76,7 @@
       <list>
         <option value="Interface" />
         <option value="Class" />
+        <option value="Jsp File" />
       </list>
     </option>
   </component>
@@ -83,12 +96,6 @@
         <option name="jdkForImporter" value="12" />
       </MavenImportingSettings>
     </option>
-  </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="1912" />
-    <option name="y" value="-8" />
-    <option name="width" value="1936" />
-    <option name="height" value="1096" />
   </component>
   <component name="ProjectId" id="1P36Yim3M8lKoQgIpbRBehCB58X" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -252,7 +259,7 @@
       <workItem from="1565090482960" duration="32697000" />
       <workItem from="1565257885461" duration="8984000" />
       <workItem from="1565279419065" duration="9801000" />
-      <workItem from="1565335558298" duration="139000" />
+      <workItem from="1565335558298" duration="21256000" />
     </task>
     <servers />
   </component>
@@ -295,9 +302,14 @@
           <option name="timeStamp" value="6" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/servlet/UpdateServlet.java</url>
-          <line>17</line>
-          <option name="timeStamp" value="7" />
+          <url>file://$PROJECT_DIR$/src/main/java/servlet/FilterServlet.java</url>
+          <line>42</line>
+          <option name="timeStamp" value="15" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/servlet/AdminServlet.java</url>
+          <line>26</line>
+          <option name="timeStamp" value="17" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

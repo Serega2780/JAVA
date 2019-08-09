@@ -1,5 +1,10 @@
 package model;
 
+
+
+
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import javax.persistence.*;
 import java.util.Objects;
 
@@ -12,7 +17,15 @@ public class User {
     private int id;
 
     @Column(name = "name")
+    @NotNull
     private String name;
+
+    @Column(name = "password")
+    @NotNull
+    private String password;
+
+    @Column(name = "role")
+    private String role = "user";
 
     @Column(name = "email")
     private String email;
@@ -20,33 +33,47 @@ public class User {
     @Column(name = "country")
     private String country;
 
-    public User() {
-    }
-
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (!(o instanceof User)) return false;
         User user = (User) o;
-        return Objects.equals(getEmail(), user.getEmail());
+        return getName().equals(user.getName()) &&
+                password.equals(user.password);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(getEmail());
+        return Objects.hash(getName(), password);
     }
 
-    public User(String name, String email, String country) {
+    public User() {
+    }
+
+    public User(String name, String password, String role, String email, String country) {
         super();
         this.name = name;
+        this.password = password;
+        this.role = role;
         this.email = email;
         this.country = country;
     }
 
-    public User(int id, String name, String email, String country) {
+    public User(int id, String name, String role, String email, String country) {
         super();
         this.id = id;
         this.name = name;
+        this.role = role;
+        this.email = email;
+        this.country = country;
+    }
+
+    public User(int id, String name, String password, String role, String email, String country) {
+        super();
+        this.id = id;
+        this.name = name;
+        this.password = password;
+        this.role = role;
         this.email = email;
         this.country = country;
     }
@@ -79,7 +106,23 @@ public class User {
         return country;
     }
 
+    public String getRole() {
+        return role;
+    }
+
+    public void setRole(String role) {
+        this.role = role;
+    }
+
     public void setCountry(String country) {
         this.country = country;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
     }
 }

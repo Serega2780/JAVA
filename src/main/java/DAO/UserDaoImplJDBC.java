@@ -11,15 +11,17 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class UserDaoImplJDBC implements UserDAO {
-    private static final String INSERT_USERS_SQL = "INSERT INTO users" + "  (name, email, country) VALUES " +
-            " (?, ?, ?);";
+    private static final String INSERT_USERS_SQL = "INSERT INTO users" + "  (name, password, role, email, country) VALUES " +
+            " (?, ?, ?, ?,?);";
 
-    private static final String SELECT_USER_BY_ID = "select id,name,email,country from users where id =?";
+    private static final String SELECT_USER_BY_ID = "select id, name, password, role, email,country from users where id =?";
     private static final String SELECT_ALL_USERS = "select * from users";
+    private static final String SELECT_NOT_ADMINS = "select * from users where role = ?;";
+    private static final String SELECT_USER_BY_ROLE = "select role from users where name = ? AND password = ?";
     private static final String DELETE_USERS_SQL = "delete from users where id = ?;";
-    private static final String UPDATE_USERS_SQL = "update users set name = ?,email= ?, country =? where id = ?;";
+    private static final String UPDATE_USERS_SQL = "update users set name = ?,password = ?,role = ?,email= ?, country =? where id = ?;";
     private static final String CREATE_TABLE_SQL = "create table if not exists users " +
-            "(id bigint auto_increment,name varchar(256), email varchar(256), " +
+            "(id bigint auto_increment,name varchar(256), password varchar(256), role varchar(256),email varchar(256), " +
             "country varchar(256), primary key (id));";
     private static final String DROP_TABLE_SQL = "DROP TABLE IF EXISTS users;";
 
@@ -49,8 +51,10 @@ public class UserDaoImplJDBC implements UserDAO {
         // try-with-resource statement will auto close the connection.
         try (PreparedStatement preparedStatement = connection.prepareStatement(INSERT_USERS_SQL)) {
             preparedStatement.setString(1, user.getName());
-            preparedStatement.setString(2, user.getEmail());
-            preparedStatement.setString(3, user.getCountry());
+            preparedStatement.setString(2, user.getPassword());
+            preparedStatement.setString(3, user.getRole());
+            preparedStatement.setString(4, user.getEmail());
+            preparedStatement.setString(5, user.getCountry());
             System.out.println(preparedStatement);
             preparedStatement.executeUpdate();
         } catch (SQLException e) {
@@ -68,9 +72,11 @@ public class UserDaoImplJDBC implements UserDAO {
             ResultSet rs = preparedStatement.executeQuery();
             if (rs.next()) {
                 String name = rs.getString("name");
+                String password = rs.getString("password");
+                String role = rs.getString("role");
                 String email = rs.getString("email");
                 String country = rs.getString("country");
-                user = new User(id, name, email, country);
+                user = new User(id, name, password, role, email, country);
             }
         } catch (SQLException e) {
 
@@ -88,14 +94,53 @@ public class UserDaoImplJDBC implements UserDAO {
             while (rs.next()) {
                 int id = rs.getInt("id");
                 String name = rs.getString("name");
+                String role = rs.getString("role");
                 String email = rs.getString("email");
                 String country = rs.getString("country");
-                users.add(new User(id, name, email, country));
+                users.add(new User(id, name, role, email, country));
             }
         } catch (SQLException e) {
 
         }
         return users;
+    }
+
+    @Override
+    public List<User> selectNotAdmins() {
+        List<User> users = new ArrayList<>();
+        try (PreparedStatement preparedStatement = connection.prepareStatement(SELECT_NOT_ADMINS)) {
+            preparedStatement.setString(1, "user");
+            System.out.println(preparedStatement);
+            ResultSet rs = preparedStatement.executeQuery();
+            while (rs.next()) {
+                int id = rs.getInt("id");
+                String name = rs.getString("name");
+                String role = rs.getString("role");
+                String email = rs.getString("email");
+                String country = rs.getString("country");
+                users.add(new User(id, name, role, email, country));
+            }
+        } catch (SQLException e) {
+
+        }
+        return users;
+    }
+
+    @Override
+    public String selectUserByRole(String name, String password) {
+        String role = "";
+        try (PreparedStatement preparedStatement = connection.prepareStatement(SELECT_USER_BY_ROLE)) {
+            preparedStatement.setString(1, name);
+            preparedStatement.setString(2, password);
+            System.out.println(preparedStatement);
+            ResultSet rs = preparedStatement.executeQuery();
+            if (rs.next()) {
+                role = rs.getString("role");
+            }
+        } catch (SQLException e) {
+
+        }
+        return role;
     }
 
     @Override
@@ -114,9 +159,11 @@ public class UserDaoImplJDBC implements UserDAO {
     public void updateUser(User user) {
         try (PreparedStatement statement = connection.prepareStatement(UPDATE_USERS_SQL)) {
             statement.setString(1, user.getName());
-            statement.setString(2, user.getEmail());
-            statement.setString(3, user.getCountry());
-            statement.setInt(4, user.getId());
+            statement.setString(2, user.getPassword());
+            statement.setString(3, user.getRole());
+            statement.setString(4, user.getEmail());
+            statement.setString(5, user.getCountry());
+            statement.setInt(6, user.getId());
             statement.executeUpdate();
         } catch (SQLException e) {
 
