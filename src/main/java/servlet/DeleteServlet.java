@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-@WebServlet("/delete")
+@WebServlet("/admin/delete")
 public class DeleteServlet extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
@@ -17,7 +17,7 @@ public class DeleteServlet extends HttpServlet {
         //ServletActions.deleteUser(request, response,true);
         int id = Integer.parseInt(request.getParameter("id"));
         UserDaoFactory.getDaoFactory().createDAO().deleteUser(id);
-        response.sendRedirect("admin");
+        response.sendRedirect("list");
     }
 
 }

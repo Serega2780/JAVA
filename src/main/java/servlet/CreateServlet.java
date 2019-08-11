@@ -13,11 +13,11 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-@WebServlet({"/new", "/insert"})
+@WebServlet({"/admin/new", "/admin/insert"})
 public class CreateServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        RequestDispatcher dispatcher = request.getRequestDispatcher("user-form.jsp");
+        RequestDispatcher dispatcher = request.getRequestDispatcher("/user-form.jsp");
         dispatcher.forward(request, response);
     }
 
@@ -31,7 +31,7 @@ public class CreateServlet extends HttpServlet {
         String country = request.getParameter("country");
         User newUser = new User(name, password, role, email, country);
         UserDaoFactory.getDaoFactory().createDAO().insertUser(newUser);
-        response.sendRedirect("admin");
+        response.sendRedirect("list");
         // new UserDaoImplJDBC().insertUser(newUser);
     }
 }
