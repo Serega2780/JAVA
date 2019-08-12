@@ -1,6 +1,6 @@
 package servlet;
 
-import DAO.UserDaoFactory;
+import service.UserFactoryHelper;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -16,7 +16,7 @@ public class DeleteServlet extends HttpServlet {
             throws ServletException, IOException {
         //ServletActions.deleteUser(request, response,true);
         int id = Integer.parseInt(request.getParameter("id"));
-        UserDaoFactory.getDaoFactory().createDAO().deleteUser(id);
+        UserFactoryHelper.getDaoFactory().createDAO().deleteUser(id);
         response.sendRedirect("list");
     }
 

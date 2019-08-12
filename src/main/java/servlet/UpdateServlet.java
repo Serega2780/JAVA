@@ -1,7 +1,7 @@
 package servlet;
 
-import DAO.UserDaoFactory;
 import model.User;
+import service.UserFactoryHelper;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -16,7 +16,7 @@ public class UpdateServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         int id = Integer.parseInt(request.getParameter("id"));
-        User existingUser = UserDaoFactory.getDaoFactory().createDAO().selectUser(id);
+        User existingUser = UserFactoryHelper.getDaoFactory().createDAO().selectUser(id);
         RequestDispatcher dispatcher = request.getRequestDispatcher("/user-form.jsp");
         request.setAttribute("user", existingUser);
         dispatcher.forward(request, response);
@@ -34,7 +34,7 @@ public class UpdateServlet extends HttpServlet {
         String country = request.getParameter("country");
 
         User user = new User(id, name, password, role, email, country);
-        UserDaoFactory.getDaoFactory().createDAO().updateUser(user);
+        UserFactoryHelper.getDaoFactory().createDAO().updateUser(user);
         response.sendRedirect("list");
 
 

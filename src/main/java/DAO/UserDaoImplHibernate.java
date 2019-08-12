@@ -15,7 +15,7 @@ public class UserDaoImplHibernate implements UserDAO {
     private static final String DELETE_USERS_HIBERNATE = "DELETE FROM User WHERE id = :id";
     private Session session;
 
-    UserDaoImplHibernate(Session session) {
+    public UserDaoImplHibernate(Session session) {
         super();
         this.session = session;
     }

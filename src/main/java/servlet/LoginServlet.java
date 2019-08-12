@@ -1,7 +1,6 @@
 package servlet;
 
-import DAO.UserDaoFactory;
-import model.User;
+import service.UserFactoryHelper;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -12,22 +11,26 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.HashMap;
 
-import java.util.List;
 import java.util.Map;
 
 @WebServlet("/login")
 public class LoginServlet extends HttpServlet {
-    protected static Map<String, String> sessions;
+    public static Map<String, String> sessions;
 
-    protected static String isAuthenticated(String sessionId) {
-        for (Map.Entry<String, String> entry : sessions.entrySet()) {
-            if (entry.getKey().equals(sessionId)) {
-                return entry.getValue();
+    public static String isAuthenticated(String sessionId) {
+
+        try {
+            for (Map.Entry<String, String> entry : sessions.entrySet()) {
+                if (entry.getKey().equals(sessionId)) {
+                    return entry.getValue();
+
+                }
 
             }
+        } catch (NullPointerException e) {
 
         }
-        return null;
+        return "";
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
@@ -40,7 +43,7 @@ public class LoginServlet extends HttpServlet {
             throws ServletException, IOException {
         String name = request.getParameter("login");
         String password = request.getParameter("password");
-        String role = UserDaoFactory.getDaoFactory().createDAO().selectUserByRole(name, password);
+        String role = UserFactoryHelper.getDaoFactory().createDAO().selectUserByRole(name, password);
         sessions = new HashMap<>();
         System.out.println(request.getSession().getId());
         sessions.put(request.getSession().getId(), role);

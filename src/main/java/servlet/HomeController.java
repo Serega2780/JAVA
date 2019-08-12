@@ -1,8 +1,7 @@
 package servlet;
 
-import DAO.UserDaoFactory;
-import DAO.UserDaoImplJDBC;
 import model.User;
+import service.UserFactoryHelper;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -11,9 +10,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 
 @WebServlet("/home")
@@ -38,7 +35,7 @@ public class HomeController extends HttpServlet {
             response.sendRedirect("admin/list");
 
         } else {
-            List<User> listUser = UserDaoFactory.getDaoFactory().createDAO().selectNotAdmins();
+            List<User> listUser = UserFactoryHelper.getDaoFactory().createDAO().selectNotAdmins();
             request.setAttribute("listUser", listUser);
             RequestDispatcher dispatcher = request.getRequestDispatcher("/user-access.jsp");
             dispatcher.forward(request, response);

@@ -5,6 +5,7 @@ servlet\AdminFilter.class
 servlet\UpdateServlet.class
 servlet\HomeController.class
 DAO\UserDaoFactoryImplJDBC.class
+model\UserFactoryHelper.class
 DAO\UserDaoFactoryImplHibernate.class
 DAO\UserDaoImplHibernate.class
 servlet\LoginServlet.class

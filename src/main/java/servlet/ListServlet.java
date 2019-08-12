@@ -1,7 +1,7 @@
 package servlet;
 
-import DAO.UserDaoFactory;
 import model.User;
+import service.UserFactoryHelper;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -16,7 +16,7 @@ import java.util.List;
 public class ListServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        List<User> listUser = UserDaoFactory.getDaoFactory().createDAO().selectAllUsers();
+        List<User> listUser = UserFactoryHelper.getDaoFactory().createDAO().selectAllUsers();
         request.setAttribute("listUser", listUser);
         RequestDispatcher dispatcher = request.getRequestDispatcher("/user-list.jsp");
         dispatcher.forward(request, response);

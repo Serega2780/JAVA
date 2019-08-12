@@ -1,9 +1,7 @@
 package servlet;
 
-import DAO.UserDaoFactory;
-import DAO.UserDaoFactoryImplJDBC;
-import DAO.UserDaoImplJDBC;
 import model.User;
+import service.UserFactoryHelper;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -30,7 +28,8 @@ public class CreateServlet extends HttpServlet {
         String email = request.getParameter("email");
         String country = request.getParameter("country");
         User newUser = new User(name, password, role, email, country);
-        UserDaoFactory.getDaoFactory().createDAO().insertUser(newUser);
+        UserFactoryHelper.getDaoFactory().createDAO().insertUser(newUser);
+        //UserDaoFactory.getDaoFactory().createDAO().insertUser(newUser);
         response.sendRedirect("list");
         // new UserDaoImplJDBC().insertUser(newUser);
     }
