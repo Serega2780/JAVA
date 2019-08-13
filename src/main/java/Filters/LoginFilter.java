@@ -12,26 +12,30 @@ import java.util.HashMap;
 @WebFilter("/*")
 //"/admin", "/user", "/home"})
 public class LoginFilter implements Filter {
-    @Override
+  /*  @Override
     public void init(FilterConfig filterConfig) throws ServletException {
     }
-
+*/
     @Override
     public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
 
         HttpServletRequest req = (HttpServletRequest) request;
         HttpServletResponse res = (HttpServletResponse) response;
-        if (LoginServlet.sessions == null) {
-            LoginServlet.sessions = new HashMap<>();
-        }
-        String userSession = LoginServlet.isAuthenticated(req.getSession().getId());
-        if (!userSession.isEmpty() || req.getRequestURI().endsWith("/login")) {
-            chain.doFilter(request, response);
-        } else {
-            res.sendRedirect(req.getContextPath() + "/login");
-            //("index.jsp");
-        }
+        String role = (String) req.getSession().getAttribute(req.getSession().getId());
+        System.out.println(req.getRequestURI());
 
+        if (role != null || req.getRequestURI().endsWith("/login") && req.getMethod().equals("POST")) {
+            if (req.getRequestURI().endsWith("/login") && req.getMethod().equals("GET")) {
+                res.sendRedirect("admin/list");
+            } else {
+                chain.doFilter(request, response);
+            }
+
+        } else {
+            //res.sendRedirect("login");
+            RequestDispatcher dispatcher = request.getRequestDispatcher("index.jsp");
+            dispatcher.forward(request, response);
+        }
 
     }
 

@@ -17,7 +17,7 @@ public class UserDaoImplJDBC implements UserDAO {
     private static final String SELECT_USER_BY_ID = "select id, name, password, role, email,country from users where id =?";
     private static final String SELECT_ALL_USERS = "select * from users";
     private static final String SELECT_NOT_ADMINS = "select * from users where role = ?;";
-    private static final String SELECT_USER_BY_ROLE = "select role from users where name = ? AND password = ?";
+    private static final String SELECT_USER_BY_ROLE = "select * from users where name = ? AND password = ?";
     private static final String DELETE_USERS_SQL = "delete from users where id = ?;";
     private static final String UPDATE_USERS_SQL = "update users set name = ?,password = ?,role = ?,email= ?, country =? where id = ?;";
     private static final String CREATE_TABLE_SQL = "create table if not exists users " +
@@ -127,20 +127,27 @@ public class UserDaoImplJDBC implements UserDAO {
     }
 
     @Override
-    public String selectUserByRole(String name, String password) {
-        String role = "";
+    public User selectUserByRole(String name, String password) {
+        User user = null;
         try (PreparedStatement preparedStatement = connection.prepareStatement(SELECT_USER_BY_ROLE)) {
             preparedStatement.setString(1, name);
             preparedStatement.setString(2, password);
             System.out.println(preparedStatement);
             ResultSet rs = preparedStatement.executeQuery();
             if (rs.next()) {
-                role = rs.getString("role");
+                int id = rs.getInt("name");
+                String uName = rs.getString("name");
+                String uPassword = rs.getString("password");
+                String role = rs.getString("role");
+                String email = rs.getString("email");
+                String country = rs.getString("country");
+                user = new User(id, uName, uPassword, role, email, country);
+
             }
         } catch (SQLException e) {
 
         }
-        return role;
+        return user;
     }
 
     @Override

@@ -30,11 +30,13 @@ public class UserDaoImplHibernate implements UserDAO {
 
     @Override
     public User selectUser(int id) {
-        User user;
+        User user = null;
         Transaction transaction = session.beginTransaction();
         Query query = session.createQuery(SELECT_USER_BY_ID_HIBERNATE);
         query.setParameter("id", id);
-        user = (User) query.list().get(0);
+        if (!query.list().isEmpty()) {
+            user = (User) query.list().get(0);
+        }
         transaction.commit();
         session.close();
         return user;
@@ -62,16 +64,18 @@ public class UserDaoImplHibernate implements UserDAO {
     }
 
     @Override
-    public String selectUserByRole(String name, String password) {
-        User user;
+    public User selectUserByRole(String name, String password) {
+        User user = null;
         Transaction transaction = session.beginTransaction();
         Query query = session.createQuery(SELECT_USER_BY_ROLE);
         query.setParameter("name", name);
         query.setParameter("password", password);
-        user = (User) query.list().get(0);
+        if (!query.list().isEmpty()) {
+            user = (User) query.list().get(0);
+        }
         transaction.commit();
         session.close();
-        return user.getRole();
+        return user;
     }
 
     @Override
