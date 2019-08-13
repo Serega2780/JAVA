@@ -36,7 +36,5 @@ public class UpdateServlet extends HttpServlet {
         User user = new User(id, name, password, role, email, country);
         UserFactoryHelper.getDaoFactory().createDAO().updateUser(user);
         response.sendRedirect("list");
-
-
     }
 }

@@ -10,29 +10,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5b077b4f-0514-48a5-82b4-6fe674da8ff3" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/servlet/UserListServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/JAVA.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/JAVA.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/JAVA_war_exploded.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/JAVA_war_exploded.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__javax_servlet_javax_servlet_api_3_1_0.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__javax_servlet_javax_servlet_api_3_0_1.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__javax_servlet_servlet_api_2_3.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__javax_servlet_servlet_api_3_0_alpha_1.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/DAO/UserDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DAO/UserDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/DAO/UserDaoImplHibernate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DAO/UserDaoImplHibernate.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/DAO/UserDaoImplJDBC.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DAO/UserDaoImplJDBC.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Filters/AdminFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Filters/AdminFilter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Filters/LoginFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Filters/LoginFilter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/servlet/HomeController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/servlet/ListServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/servlet/AdminListServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/servlet/LoginServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/servlet/LoginServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/CRUDApp.war" beforeDir="false" afterPath="$PROJECT_DIR$/target/CRUDApp.war" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/CRUDApp/META-INF/MANIFEST.MF" beforeDir="false" afterPath="$PROJECT_DIR$/target/CRUDApp/META-INF/MANIFEST.MF" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/CRUDApp/WEB-INF/classes/DAO/UserDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/CRUDApp/WEB-INF/classes/DAO/UserDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/CRUDApp/WEB-INF/classes/model/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/CRUDApp/WEB-INF/classes/model/User.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/CRUDApp/WEB-INF/lib/javax.servlet-api-3.1.0.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/DAO/UserDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/DAO/UserDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/User.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/servlet/UpdateServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/servlet/UpdateServlet.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -257,6 +238,7 @@
       <workItem from="1565543838752" duration="1302000" />
       <workItem from="1565546370018" duration="5871000" />
       <workItem from="1565678571066" duration="11927000" />
+      <workItem from="1565697626376" duration="747000" />
     </task>
     <servers />
   </component>

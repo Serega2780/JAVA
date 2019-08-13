@@ -12,10 +12,7 @@ import java.util.HashMap;
 @WebFilter("/*")
 //"/admin", "/user", "/home"})
 public class LoginFilter implements Filter {
-  /*  @Override
-    public void init(FilterConfig filterConfig) throws ServletException {
-    }
-*/
+
     @Override
     public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
 
@@ -39,7 +36,4 @@ public class LoginFilter implements Filter {
 
     }
 
-    @Override
-    public void destroy() {
-    }
 }
