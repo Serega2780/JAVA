@@ -1,6 +1,6 @@
-package Factory;
+package factory;
 
-import DAO.UserDaoImplJDBC;
+import dao.UserDaoImplJDBC;
 
 public class UserDaoFactoryImplJDBC extends UserDaoFactory {
     private UserDaoImplJDBC userDaoImplJDBC;

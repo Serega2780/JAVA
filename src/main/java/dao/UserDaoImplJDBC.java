@@ -1,4 +1,4 @@
-package DAO;
+package dao;
 
 import model.User;
 import service.DBHelper;

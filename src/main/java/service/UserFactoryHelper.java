@@ -1,8 +1,8 @@
 package service;
 
-import Factory.UserDaoFactory;
-import Factory.UserDaoFactoryImplHibernate;
-import Factory.UserDaoFactoryImplJDBC;
+import factory.UserDaoFactory;
+import factory.UserDaoFactoryImplHibernate;
+import factory.UserDaoFactoryImplJDBC;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -12,9 +12,9 @@ import java.util.Properties;
 public class UserFactoryHelper {
     private static final String fileName = "Dao.properties";
     public static UserDaoFactory getDaoFactory() {
-        if (ReadProp().getProperty("DAO").equalsIgnoreCase("jdbc")) {
+        if (ReadProp().getProperty("dao").equalsIgnoreCase("jdbc")) {
             return new UserDaoFactoryImplJDBC();
-        } else if (ReadProp().getProperty("DAO").equalsIgnoreCase("hibernate")) {
+        } else if (ReadProp().getProperty("dao").equalsIgnoreCase("hibernate")) {
             return new UserDaoFactoryImplHibernate();
         }
         return null;

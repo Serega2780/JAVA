@@ -1,7 +1,5 @@
-package Filters;
+package filter;
 
-
-import servlet.LoginServlet;
 
 import javax.servlet.*;
 import javax.servlet.annotation.WebFilter;

@@ -11,9 +11,17 @@
   <component name="ChangeListManager">
     <list default="true" id="5b077b4f-0514-48a5-82b4-6fe674da8ff3" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Filters/AdminFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Filters/AdminFilter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Filters/LoginFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Filters/LoginFilter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/servlet/UpdateServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/servlet/UpdateServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Dao.properties" beforeDir="false" afterPath="$PROJECT_DIR$/Dao.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/DAO/UserDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/UserDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/DAO/UserDaoImplHibernate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/UserDaoImplHibernate.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/DAO/UserDaoImplJDBC.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/UserDaoImplJDBC.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Factory/UserDaoFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/factory/UserDaoFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Factory/UserDaoFactoryImplHibernate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/factory/UserDaoFactoryImplHibernate.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Factory/UserDaoFactoryImplJDBC.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/factory/UserDaoFactoryImplJDBC.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Filters/AdminFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/filter/AdminFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Filters/LoginFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/filter/LoginFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/service/UserFactoryHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/service/UserFactoryHelper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/DAO/UserDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/DAO/UserDAO.class" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -239,6 +247,7 @@
       <workItem from="1565546370018" duration="5871000" />
       <workItem from="1565678571066" duration="11927000" />
       <workItem from="1565697626376" duration="747000" />
+      <workItem from="1565698759900" duration="135000" />
     </task>
     <servers />
   </component>
