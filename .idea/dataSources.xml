@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
-    <data-source source="LOCAL" name="db_example@localhost" uuid="10eb57a7-d408-4601-b3de-d88fb1c365f1">
-      <driver-ref>mysql</driver-ref>
+    <data-source source="LOCAL" name="MySQL - db_example@localhost" uuid="0eadf002-478e-4b9a-94bd-2d930ca6d39b">
+      <driver-ref>mysql.8</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>com.mysql.jdbc.Driver</jdbc-driver>
       <jdbc-url>jdbc:mysql://localhost:3306/db_example</jdbc-url>
@@ -14,7 +14,6 @@
         <property name="characterSetResults" value="utf8" />
         <property name="yearIsDateType" value="false" />
       </driver-properties>
-      <time-zone>GMT</time-zone>
     </data-source>
   </component>
 </project>
