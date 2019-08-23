@@ -9,8 +9,9 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <html>
 <head>
+
     <title>Login</title>
-    <form action="login" method="post">
+    <form action="/perform_login" method="post">
         Login:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="login"/><br/><br/>
         Password:&nbsp;&nbsp;&nbsp;<input type="password" name="password"/><br/><br/>
         <input type="submit" value="login"/>

@@ -11,35 +11,45 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 import springhibernatemysql.domain.User;
 import springhibernatemysql.repositories.UserRepository;
+import springhibernatemysql.service.UserServiceImpl;
 
 @Controller
 @RequestMapping(value = {
-        "/edit",
-        "/update"
+        "/admin/edit",
+        "/admin/update"
 })
 public class UpdateController {
-    private UserRepository userRepo;
+    private UserServiceImpl userService;
 
     @Autowired
-    public UpdateController(UserRepository userRepo) {
-        this.userRepo = userRepo;
+    public UpdateController(UserServiceImpl userService) {
+
+        this.userService = userService;
     }
 
     @GetMapping
     public String showEditForm(@RequestParam("id") int id, Model model) {
-        User user = userRepo.findById(id).get();
+        User user = userService.getUserById(id);
         model.addAttribute("user", user);
         return "user-form";
 
     }
 
     @PostMapping
-    public ModelAndView editUser(@RequestParam("name") String name, @RequestParam("password") String password,
-                                 @RequestParam("role") String role, @RequestParam("email") String email,
+    public ModelAndView editUser(@RequestParam("id") int id,
+                                 @RequestParam("name") String name,
+                                 @RequestParam("password") String password,
+                                 @RequestParam("role") String role,
+                                 @RequestParam("email") String email,
                                  @RequestParam("country") String country) {
-        User user = new User(name, password, role, email, country);
-        userRepo.save(user);
-        return new ModelAndView("redirect:/users");
+        User user = userService.getUserById(id);
+        user.setName(name);
+        user.setPassword(password);
+        user.setRole(role);
+        user.setEmail(email);
+        user.setCountry(country);
+        userService.createOrUpdateUser(user);
+        return new ModelAndView("redirect:/admin/list");
 
     }
 }

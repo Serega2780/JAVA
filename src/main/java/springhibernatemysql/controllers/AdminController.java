@@ -5,24 +5,28 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+
+
+import springhibernatemysql.repositories.UserRepository;
 import springhibernatemysql.service.UserServiceImpl;
 
 @Controller
 @RequestMapping(value = {
-        "/user"
+        "/admin/list"
 })
-public class UserController {
+public class AdminController {
+
     private UserServiceImpl userService;
 
     @Autowired
-    public UserController(UserServiceImpl userService) {
+    public AdminController(UserServiceImpl userService) {
 
         this.userService = userService;
     }
 
     @GetMapping
-    public String userHome(Model model) {
-        model.addAttribute("listUser", userService.selectUsersByRole("USER"));
-        return "user-access";
+    public String home(Model model) {
+        model.addAttribute("listUser", userService.getAllUsers());
+        return "user-list";
     }
 }
