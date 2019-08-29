@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+
 <html>
 <head>
     <title>User Management Application</title>
@@ -21,21 +22,32 @@
         <tr>
             <th>ID</th>
             <th>Name</th>
-            <th>Role</th>
+            <th>Admin</th>
             <th>Email</th>
             <th>Country</th>
             <th>Actions</th>
         </tr>
-        <c:forEach items="${listUser}" var="user" >
+        <c:forEach items="${listUser}" var="user">
             <tr>
                 <td>${user.id}</td>
                 <td>${user.name}</td>
-                <td>${user.role}</td>
+                <td>
+                <c:forEach items="${user.grantedAuthorities}" var="authorities">
+                    <c:choose>
+                        <c:when test="${authorities.role.equals('ROLE_ADMIN')}">
+                            <input type="checkbox" checked disabled name="admin">
+                        </c:when>
+                        <c:otherwise>
+                            <input type="checkbox" checked disabled name="user" style='display:none;'>
+                        </c:otherwise>
+                    </c:choose>
+                </c:forEach>
+                </td>>
                 <td>${user.email}</td>
                 <td>${user.country}</td>
                 <td>
                     <a href="edit?id=<c:out value="${user.id}" />">Edit</a>
-                    &nbsp;&nbsp;&nbsp;&nbsp;
+                     &nbsp;&nbsp;&nbsp;&nbsp;
                     <a href="delete?id=<c:out value="${user.id}" />">Delete</a>
                 </td>
             </tr>

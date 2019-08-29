@@ -10,7 +10,13 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 
 import org.springframework.security.crypto.password.NoOpPasswordEncoder;
 
+import org.springframework.security.web.authentication.AuthenticationSuccessHandler;
+import springhibernatemysql.dao.DatabaseDao;
 import springhibernatemysql.service.UserServiceImpl;
+
+import javax.annotation.PostConstruct;
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
 
 
 @Configuration
@@ -20,18 +26,20 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     @Autowired
     private UserServiceImpl userService;
 
-
     @Override
     protected void configure(final AuthenticationManagerBuilder auth) throws Exception {
 
         auth.userDetailsService(userService).passwordEncoder(passwordEncoder());
     }
 
-
     @Bean
     @SuppressWarnings("deprecation")
     public static NoOpPasswordEncoder passwordEncoder() {
         return (NoOpPasswordEncoder) NoOpPasswordEncoder.getInstance();
+    }
+    @Bean
+    public AuthenticationSuccessHandler myAuthenticationSuccessHandler(){
+        return new MySimpleUrlAuthenticationSuccessHandler();
     }
 
     @Override
@@ -44,12 +52,12 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers("/", "/login", "/logout").permitAll();
         // For ADMIN only.
         http.authorizeRequests()
-                .antMatchers("/admin/**").hasAuthority("ADMIN")
+                .antMatchers("/admin/**").hasRole("ADMIN")
                 .anyRequest().authenticated();
 
         http.authorizeRequests()
                 .antMatchers("/redirect", "/user")
-                .hasAnyAuthority("ADMIN", "USER")
+                .hasAnyRole("ADMIN", "USER")
                 .anyRequest().authenticated();
 
 
@@ -58,7 +66,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 // Submit URL of login page.
                 .loginProcessingUrl("/perform_login") // Submit URL
                 .loginPage("/")//
-                .defaultSuccessUrl("/redirect")//
+                .successHandler(myAuthenticationSuccessHandler())
+                //.defaultSuccessUrl("/redirect")//
                 .failureUrl("/")//
                 .usernameParameter("login")//
                 .passwordParameter("password");

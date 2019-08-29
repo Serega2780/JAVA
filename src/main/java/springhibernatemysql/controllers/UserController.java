@@ -22,7 +22,7 @@ public class UserController {
 
     @GetMapping
     public String userHome(Model model) {
-        model.addAttribute("listUser", userService.selectUsersByRole("USER"));
+    //    model.addAttribute("listUser", userService.selectUsersByRole("USER"));
         return "user-access";
     }
 }
