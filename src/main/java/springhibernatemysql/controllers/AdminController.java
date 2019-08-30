@@ -9,12 +9,15 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 import springhibernatemysql.domain.Role;
 import springhibernatemysql.domain.User;
+import springhibernatemysql.service.RoleService;
+import springhibernatemysql.service.UserService;
 import springhibernatemysql.service.UserServiceImpl;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
 import java.security.Principal;
 import java.util.ArrayList;
+import java.util.Enumeration;
 import java.util.List;
 
 @Controller
@@ -23,11 +26,13 @@ import java.util.List;
 })
 public class AdminController {
 
-    private UserServiceImpl userService;
+    private UserService userService;
+    private RoleService roleService;
 
-    @Autowired
-    public AdminController(UserServiceImpl userService) {
 
+    public AdminController(UserService userService, RoleService roleService) {
+
+        this.roleService = roleService;
         this.userService = userService;
     }
 
@@ -48,67 +53,65 @@ public class AdminController {
     @GetMapping("/admin/list")
     public String home(Model model) {
         model.addAttribute("listUser", userService.getAllUsers());
+
         System.out.println(userService.getAllUsers());
         return "user-list";
     }
 
     @GetMapping("/admin/new")
-    public ModelAndView addForm(@ModelAttribute(name = "countriesList") List<String> countries,
-                                ) {
+    public ModelAndView addForm(@ModelAttribute(name = "countriesList") List<String> countries) {
 
-        ModelAndView modelView = new ModelAndView();
-        modelView.setViewName("user-form");
+        ModelAndView modelView = new ModelAndView("user-form");
+
+        List<Role> roles = roleService.getAllRoles();
+        modelView.addObject("grantedAuthorities", roles);
 
         return modelView;
     }
 
     @PostMapping("/admin/insert")
-    public String addUser(@ModelAttribute User user) {
-        String name;
-        name = user.getName();
-        //   User user = new User(name, password, email, country);
-        //  User loginedUser = (User) ((Authentication) principal).getPrincipal();
-        //    userService.createOrUpdateUser(user);
-        // return new ModelAndView("redirect:/admin/list");
-        // name = httpServletRequest.getParameter("role") != null;
+    public String addUser(@ModelAttribute User user, @RequestParam("role") String role) {
 
+        if (role.contains("ROLE_ADMIN")) {
+            user.getGrantedAuthorities().add(roleService.getSingleRole(1));
+        }
 
-        return user.getName();
+        user.getGrantedAuthorities().add(roleService.getSingleRole(2));
+        userService.createUser(user);
+
+        return "redirect:/admin/list";
     }
 
     @GetMapping("/admin/delete")
     public ModelAndView deleteUser(@RequestParam("id") int id) {
 
-        //    userService.deleteUser(id);
+        userService.deleteUser(id);
         return new ModelAndView("redirect:/admin/list");
 
     }
 
     @GetMapping("/admin/edit")
-    public String showEditForm(@RequestParam("id") int id, Model model) {
-        //  User user = userService.getUserById(id);
-        //   model.addAttribute("user", user);
-        return "user-form";
+    public ModelAndView showEditForm(@RequestParam("id") int id) {
+        User user = userService.getUserById(id);
+        ModelAndView modelView = new ModelAndView("user-form");
+        modelView.addObject("user", user);
 
+        modelView.addObject("grantedAuthorities", roleService.getAllRoles());
+
+        return modelView;
     }
 
     @PostMapping("/admin/update")
-    public ModelAndView editUser(@RequestParam("id") int id,
-                                 @RequestParam("name") String name,
-                                 @RequestParam("password") String password,
-                                 @RequestParam("role") String role,
-                                 @RequestParam("email") String email,
-                                 @RequestParam("country") String country) {
-     /*   User user = userService.getUserById(id);
-        user.setName(name);
-        user.setPassword(password);
-    //    user.setRole(role);
-        user.setEmail(email);
-        user.setCountry(country);
-        userService.createOrUpdateUser(user);
+    public String editUser(@ModelAttribute User user, @RequestParam("role") String role) {
+        //User u = userService.getUserById(user.getId());
+        if (role.contains("ROLE_ADMIN")) {
+            user.getGrantedAuthorities().add(roleService.getSingleRole(1));
+        }
 
-      */
-        return new ModelAndView("redirect:/admin/list");
+        user.getGrantedAuthorities().add(roleService.getSingleRole(2));
+        userService.createUser(user);
+
+        return "redirect:/admin/list";
 
     }
 }

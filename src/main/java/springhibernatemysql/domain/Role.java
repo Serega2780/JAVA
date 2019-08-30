@@ -4,6 +4,8 @@ import lombok.Data;
 import org.springframework.security.core.GrantedAuthority;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.Collection;
 
 /*
 @Data
@@ -16,7 +18,7 @@ import javax.persistence.*;
 @Entity
 @Table(name = "roles", //
         uniqueConstraints = { //
-                @UniqueConstraint(name = "ROLE_UK", columnNames = "role") })
+                @UniqueConstraint(name = "ROLE_UK", columnNames = "role")})
 public class Role implements GrantedAuthority {
     @Id
     @Column(name = "id")
@@ -25,6 +27,11 @@ public class Role implements GrantedAuthority {
 
     @Column(name = "role")
     private String role;
+
+    public Role(int id, String role) {
+        setId(id);
+        setRole(role);
+    }
 
     @Override
     public String getAuthority() {

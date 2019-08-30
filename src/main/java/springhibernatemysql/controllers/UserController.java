@@ -5,7 +5,12 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.ModelAndView;
+import springhibernatemysql.domain.Role;
+import springhibernatemysql.domain.User;
 import springhibernatemysql.service.UserServiceImpl;
+
+import java.util.List;
 
 @Controller
 @RequestMapping(value = {
@@ -21,8 +26,13 @@ public class UserController {
     }
 
     @GetMapping
-    public String userHome(Model model) {
-    //    model.addAttribute("listUser", userService.selectUsersByRole("USER"));
-        return "user-access";
+    public ModelAndView userHome(Model model) {
+        ModelAndView modelView = new ModelAndView("user-access");
+
+        List<User> listUser = userService.selectUsersByRole();
+        modelView.addObject("listUser", listUser);
+
+        return modelView;
+
     }
 }

@@ -32,16 +32,16 @@
                 <td>${user.id}</td>
                 <td>${user.name}</td>
                 <td>
-                <c:forEach items="${user.grantedAuthorities}" var="authorities">
+
                     <c:choose>
-                        <c:when test="${authorities.role.equals('ROLE_ADMIN')}">
+                        <c:when test="${user.grantedAuthorities.toString().contains('ROLE_ADMIN')}">
                             <input type="checkbox" checked disabled name="admin">
                         </c:when>
                         <c:otherwise>
                             <input type="checkbox" checked disabled name="user" style='display:none;'>
                         </c:otherwise>
                     </c:choose>
-                </c:forEach>
+
                 </td>>
                 <td>${user.email}</td>
                 <td>${user.country}</td>

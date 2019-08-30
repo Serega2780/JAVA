@@ -59,8 +59,8 @@
                 <tr>
                     <th>Roles:</th>
                     <td>
-                        <select name="Role">
-                            <c:forEach items="${allRoles}" var="role">
+                        <select name="role">
+                            <c:forEach items="${grantedAuthorities}" var="role">
                                 <option value="${role}">
                                         ${role}
                                 </option>
@@ -81,7 +81,7 @@
                   <tr>
                       <th>Country:</th>
                       <td>
-                          <select name="Country">
+                          <select name="country">
                               <c:forEach items="${countriesList}" var="country">
                                   <option value="${country}">
                                           ${country}

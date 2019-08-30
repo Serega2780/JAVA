@@ -2,42 +2,27 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ba738e24-7f00-46d6-81a8-b8ed2816bc4b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/springhibernatemysql/config/MySimpleUrlAuthenticationSuccessHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/springhibernatemysql/dao/DatabaseDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/springhibernatemysql/dao/RoleDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/springhibernatemysql/dao/UserDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/springhibernatemysql/domain/Role.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/springhibernatemysql/domain/UserRole.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/springboot2_hibernate_jsp_mysql_war_exploded.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/springboot2_hibernate_jsp_mysql_war_exploded.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/springhibernatemysql/service/RoleService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/springhibernatemysql/service/RoleServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/springboot2-hibernate-jsp-mysql.iml" beforeDir="false" afterPath="$PROJECT_DIR$/springboot2-hibernate-jsp-mysql.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/springhibernatemysql/Springboot2HibernateMysqlJSPApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/springhibernatemysql/Springboot2HibernateMysqlJSPApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/springhibernatemysql/config/WebSecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/springhibernatemysql/config/WebSecurityConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/springhibernatemysql/controllers/AddController.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/springhibernatemysql/controllers/AdminController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/springhibernatemysql/controllers/AdminController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/springhibernatemysql/controllers/DeleteController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/springhibernatemysql/controllers/RedirectorController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/springhibernatemysql/controllers/UpdateController.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/springhibernatemysql/controllers/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/springhibernatemysql/controllers/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/springhibernatemysql/dao/RoleDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/springhibernatemysql/dao/RoleDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/springhibernatemysql/dao/UserDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/springhibernatemysql/dao/UserDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/springhibernatemysql/domain/Role.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/springhibernatemysql/domain/Role.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/springhibernatemysql/domain/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/springhibernatemysql/domain/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/springhibernatemysql/repositories/UserRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/springhibernatemysql/domain/UserRole.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/springhibernatemysql/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/springhibernatemysql/service/UserService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/springhibernatemysql/service/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/springhibernatemysql/service/UserServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/user-access.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/user-access.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/user-form.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/user-form.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/user-list.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/user-list.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/META-INF/springboot2-hibernate-jsp-mysql.kotlin_module" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/META-INF/springboot2-hibernate-jsp-mysql.kotlin_module" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/springhibernatemysql/Springboot2HibernateMysqlJSPApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/springhibernatemysql/Springboot2HibernateMysqlJSPApplication.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/springhibernatemysql/config/WebSecurityConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/springhibernatemysql/config/WebSecurityConfig.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/springhibernatemysql/controllers/AddController.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/springhibernatemysql/controllers/AdminController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/springhibernatemysql/controllers/AdminController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/springhibernatemysql/controllers/DeleteController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/springhibernatemysql/controllers/RedirectorController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/springhibernatemysql/controllers/UpdateController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/springhibernatemysql/controllers/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/springhibernatemysql/controllers/UserController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/springhibernatemysql/dao/RoleDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/springhibernatemysql/dao/RoleDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/springhibernatemysql/dao/UserDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/springhibernatemysql/dao/UserDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/springhibernatemysql/domain/Role.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/springhibernatemysql/domain/Role.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/springhibernatemysql/domain/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/springhibernatemysql/domain/User.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/springhibernatemysql/repositories/UserRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/springhibernatemysql/domain/UserRole.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/springhibernatemysql/service/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/springhibernatemysql/service/UserService.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/springhibernatemysql/service/UserServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/springhibernatemysql/service/UserServiceImpl.class" afterDir="false" />
     </list>
@@ -53,8 +38,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Interface" />
         <option value="Jsp File" />
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -83,20 +68,21 @@
     <property name="project.structure.side.proportion" value="0.0" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\JAVA\springboot2-webapp-jsp-master" />
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="net.guides.springboot2.springboot2webappjsp.domain" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="" />
       <recent name="net.guides.springboot2" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\JAVA\springboot2-webapp-jsp-master\src\main\webapp\WEB-INF\jsp" />
     </key>
     <key name="CreateClassDialog.RecentsKey">
       <recent name="springhibernatemysql.config" />
     </key>
-    <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="net.guides.springboot2.springboot2webappjsp.domain" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\JAVA\springboot2-webapp-jsp-master\src\main\webapp\WEB-INF\jsp" />
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\JAVA\springboot2-webapp-jsp-master" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -134,7 +120,7 @@
       <workItem from="1565980096762" duration="7571000" />
       <workItem from="1566491485642" duration="19446000" />
       <workItem from="1566817637880" duration="48004000" />
-      <workItem from="1567054940707" duration="20340000" />
+      <workItem from="1567054940707" duration="50085000" />
     </task>
     <servers />
   </component>
@@ -155,14 +141,10 @@
     </option>
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/springhibernatemysql/controllers/AdminController.java</url>
-          <line>67</line>
-          <option name="timeStamp" value="25" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <watches-manager>
+      <configuration name="SpringBootApplicationConfigurationType">
+        <watch expression="((User)((Object[])param_3)[0]).grantedAuthorities" custom="java.lang.Object[],springhibernatemysql.domain.User" />
+      </configuration>
+    </watches-manager>
   </component>
 </project>
