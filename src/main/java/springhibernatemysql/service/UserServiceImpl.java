@@ -1,5 +1,7 @@
 package springhibernatemysql.service;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.repository.CrudRepository;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
@@ -18,9 +20,11 @@ public class UserServiceImpl implements UserService, UserDetailsService {
     private final RoleDao roleDao;
     private final UserDao userDao;
 
+
     public UserServiceImpl(UserDao userDao, RoleDao roleDao) {
         this.userDao = userDao;
         this.roleDao = roleDao;
+
     }
 
     @Override
@@ -60,7 +64,8 @@ public class UserServiceImpl implements UserService, UserDetailsService {
     }
 
     @Override
-    public List<User> selectUsersByRole(){
+    public List<User> selectUsersByRole() {
+       return userDao.getUsersByRole("");
 
     }
 
