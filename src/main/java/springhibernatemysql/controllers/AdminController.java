@@ -1,6 +1,5 @@
 package springhibernatemysql.controllers;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -11,13 +10,8 @@ import springhibernatemysql.domain.Role;
 import springhibernatemysql.domain.User;
 import springhibernatemysql.service.RoleService;
 import springhibernatemysql.service.UserService;
-import springhibernatemysql.service.UserServiceImpl;
 
-import javax.servlet.http.HttpServletRequest;
-import javax.validation.Valid;
-import java.security.Principal;
 import java.util.ArrayList;
-import java.util.Enumeration;
 import java.util.List;
 
 @Controller
@@ -61,7 +55,7 @@ public class AdminController {
     @GetMapping("/admin/new")
     public ModelAndView addForm(@ModelAttribute(name = "countriesList") List<String> countries) {
 
-        ModelAndView modelView = new ModelAndView("user-form");
+        ModelAndView modelView = new ModelAndView("user-form-new");
 
         List<Role> roles = roleService.getAllRoles();
         modelView.addObject("grantedAuthorities", roles);
@@ -93,7 +87,7 @@ public class AdminController {
     @GetMapping("/admin/edit")
     public ModelAndView showEditForm(@RequestParam("id") int id) {
         User user = userService.getUserById(id);
-        ModelAndView modelView = new ModelAndView("user-form");
+        ModelAndView modelView = new ModelAndView("user-form-new");
         modelView.addObject("user", user);
 
         modelView.addObject("grantedAuthorities", roleService.getAllRoles());

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>User Management Application</title>
+</head>
+<body>
+<center>
+    <h1>User Management</h1>
+    <h2>
+        <a th:href="@{new}">Add New User</a>
+    </h2>
+</center>
+<div align="center">
+
+        <form th:action="@{/insert}" method="post">
+             <table border="1" cellpadding="5">
+                <caption>
+                    <h2>
+                       Add New User
+                    </h2>
+                </caption>
+
+                    <input type="hidden" name="id" th:value="${user.id}"/>
+
+                <tr>
+                    <th>User Name:</th>
+                    <td>
+                        <input type="text" name="name" size="45"
+                               th:value="${user.name}"/>
+
+                    </td>
+                </tr>
+                <tr>
+                    <th>User Password:</th>
+                    <td>
+                        <input type="password" name="password" size="45"
+                               th:value="${user.password}"/>
+
+                    </td>
+                </tr>
+                <tr>
+                <tr>
+                
+                <tr>
+                    <td colspan="2" align="center">
+                        <button type="submit">Save</button>
+                    </td>
+                </tr>
+            </table>
+        </form>
+</div>
+</body>
+</html>

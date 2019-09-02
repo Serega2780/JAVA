@@ -14,42 +14,16 @@ import java.util.stream.Collectors;
 @Repository
 @Transactional
 
-public class UserDao {
-    @PersistenceContext(type = PersistenceContextType.EXTENDED)
-    private EntityManager em;
+public interface UserDao {
+    User getUserByName(String name);
 
-    public User getUserByName(String name) {
-        User user;
+    List<User> getUsers();
 
-        user = em.createQuery("Select u from " + User.class.getName() + " u " + "Where u.name = :name", User.class)
-                .setParameter("name", name).getSingleResult();
-        return user;
-    }
+    User getUserById(int id);
 
-    public List<User> getUsers() {
-        return em.createQuery("Select u from " + User.class.getName() + " u ", User.class).getResultList();
-    }
+    List<User> getUsersByRole(String role);
 
-    public User getUserById(int id) {
-        return em.find(User.class, id);
-    }
+    void removeUser(int id);
 
-    public List<User> getUsersByRole(String role) {
-        List<User> users;
-
-        users = em.createQuery("select u from " + User.class.getName() + " u ",
-                User.class).getResultList();
-        return users.stream().filter(u->!u.getGrantedAuthorities().toString().contains("ROLE_ADMIN")).collect(Collectors.toList());
-
-    }
-
-    public void removeUser(int id) {
-
-        em.remove(this.getUserById(id));
-    }
-
-    public void addUser(User user) {
-        em.merge(user);
-        em.flush();
-    }
+    void addUser(User user);
 }

@@ -6,9 +6,9 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
-import springhibernatemysql.domain.Role;
 import springhibernatemysql.domain.User;
-import springhibernatemysql.service.UserServiceImpl;
+import springhibernatemysql.service.UserService;
+import springhibernatemysql.service.implementation.UserServiceImpl;
 
 import java.util.List;
 
@@ -17,7 +17,7 @@ import java.util.List;
         "/user"
 })
 public class UserController {
-    private UserServiceImpl userService;
+    private UserService userService;
 
     @Autowired
     public UserController(UserServiceImpl userService) {

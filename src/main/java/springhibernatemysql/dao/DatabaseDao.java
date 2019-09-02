@@ -3,19 +3,20 @@ package springhibernatemysql.dao;
 import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Repository;
+import org.springframework.stereotype.Service;
 
 import javax.annotation.PostConstruct;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
-@Component
+
 public class DatabaseDao {
     @PersistenceContext
     private EntityManager em;
 
     @PostConstruct
     public void init() {
-       // this.fullFillTables();
+    //   this.fullFillTables();
 
     }
 

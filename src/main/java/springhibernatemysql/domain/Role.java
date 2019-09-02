@@ -14,7 +14,7 @@ import java.util.Collection;
 @Table(name = "roles")
 
  */
-@Data
+
 @Entity
 @Table(name = "roles", //
         uniqueConstraints = { //
@@ -27,6 +27,25 @@ public class Role implements GrantedAuthority {
 
     @Column(name = "role")
     private String role;
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public Role() {
+    }
+
+    public String getRole() {
+        return this.role;
+    }
+
+    public void setRole(String role) {
+        this.role = role;
+    }
 
     public Role(int id, String role) {
         setId(id);

@@ -1,0 +1,17 @@
+springhibernatemysql\service\UserService.class
+springhibernatemysql\config\MySimpleUrlAuthenticationSuccessHandler.class
+springhibernatemysql\dao\implementation\UserDaoImpl.class
+springhibernatemysql\dao\DatabaseDao.class
+springhibernatemysql\service\RoleService.class
+springhibernatemysql\dao\implementation\RoleDaoImpl.class
+springhibernatemysql\controllers\AdminController.class
+springhibernatemysql\config\WebSecurityConfig.class
+springhibernatemysql\config\UserDetailsServiceImpl.class
+springhibernatemysql\domain\User.class
+springhibernatemysql\dao\RoleDao.class
+springhibernatemysql\Springboot2HibernateMysqlJSPApplication.class
+springhibernatemysql\dao\UserDao.class
+springhibernatemysql\domain\Role.class
+springhibernatemysql\service\implementation\UserServiceImpl.class
+springhibernatemysql\controllers\UserController.class
+springhibernatemysql\service\implementation\RoleServiceImpl.class

@@ -8,21 +8,9 @@ import javax.persistence.PersistenceContext;
 import java.util.ArrayList;
 import java.util.List;
 
-@Repository
-public class RoleDao {
-    @PersistenceContext
-    private EntityManager em;
+public interface RoleDao {
+    Role getRole(int id);
 
-    public Role getRole(int id) {
-
-        return em.find(Role.class, id);
-    }
-
-    public List<Role> getRoles() {
-        List<Role> roles = new ArrayList<>();
-        roles.add(this.getRole(1)); //admin
-        roles.add(this.getRole(2)); //user
-        return roles;
-    }
+    List<Role> getRoles();
 
 }

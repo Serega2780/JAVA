@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>User Management Application</title>
+</head>
+<body>
+<center>
+    <h1>User Management</h1>
+    <h2>
+        <a th:href="@{new}">Add New User</a>
+    </h2>
+</center>
+<div align="center">
+
+        <form th:action="@{/insert}" method="post">
+             <table border="1" cellpadding="5">
+                <caption>
+                    <h2>
+                       Add New User
+                    </h2>
+                </caption>
+
+
+                    <input type="hidden" name="id" th:value="${user.id}"/>
+
+
+                <tr>
+                    <th>User Name:</th>
+                    <td>
+                        <input type="text" name="name" size="45"
+                               th:value="${user.name}"/>
+                    </td>
+                </tr>
+                <tr>
+                    <th>User Password:</th>
+                    <td>
+                        <input type="password" name="password" size="45"
+                               th:value="${user.password}"/>
+                    </td>
+                </tr>
+                <tr>
+                <tr>
+                 <th>Roles:</th>
+                 <td>
+                     <select id="grantedAuthorities" name="grantedAuthorities">
+                         <option value=""> -- </option>
+                         <option th:each="role : ${grantedAuthorities}"
+                                 th:value="${role.getRole()}"
+                                 th:utext="${role.getRole()}"/>
+                     </select>
+                 </td>
+
+             </tr>
+                 <tr>
+                     <th>User Email:</th>
+                     <td>
+                         <input type="text" name="email" size="45"
+                                th:value="${user.email}"/>
+
+                     </td>
+                 </tr>
+                 <tr>
+                     <th>Country:</th>
+                     <td>
+                         <select id="countriesList" name="countriesList">
+                             <option value=""> -- </option>
+                             <option th:each="country : ${countriesList}"
+                                     th:value="${country}"
+                                     th:utext="${country}"/>
+                         </select>
+                     </td>
+                 </tr>
+                <tr>
+                    <td colspan="2" align="center">
+                        <button type="submit">Save</button>
+                    </td>
+                </tr>
+            </table>
+        </form>
+</div>
+</body>
+</html>
