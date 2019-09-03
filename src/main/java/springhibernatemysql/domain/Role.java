@@ -1,19 +1,10 @@
 package springhibernatemysql.domain;
 
-import lombok.Data;
+
 import org.springframework.security.core.GrantedAuthority;
 
 import javax.persistence.*;
-import java.util.ArrayList;
-import java.util.Collection;
 
-/*
-@Data
-
-@Entity
-@Table(name = "roles")
-
- */
 
 @Entity
 @Table(name = "roles", //

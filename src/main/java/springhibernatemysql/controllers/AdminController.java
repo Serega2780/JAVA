@@ -33,7 +33,7 @@ public class AdminController {
     @ModelAttribute(name = "countriesList")
     public List<String> populateCountries() {
 
-        List<String> countries = new ArrayList<String>();
+        List<String> countries = new ArrayList<>();
         countries.add("India");
         countries.add("United States");
         countries.add("Japan");
@@ -58,15 +58,16 @@ public class AdminController {
         ModelAndView modelView = new ModelAndView("user-form-new");
 
         List<Role> roles = roleService.getAllRoles();
-        modelView.addObject("grantedAuthorities", roles);
+        modelView.addObject("roles", roles);
+        modelView.addObject("user", new User());
 
         return modelView;
     }
 
     @PostMapping("/admin/insert")
-    public String addUser(@ModelAttribute User user, @RequestParam("role") String role) {
+    public String addUser(@ModelAttribute User user, @RequestParam("roles") String roles) {
 
-        if (role.contains("ROLE_ADMIN")) {
+        if (roles.contains("ROLE_ADMIN")) {
             user.getGrantedAuthorities().add(roleService.getSingleRole(1));
         }
 
@@ -90,7 +91,7 @@ public class AdminController {
         ModelAndView modelView = new ModelAndView("user-form-new");
         modelView.addObject("user", user);
 
-        modelView.addObject("grantedAuthorities", roleService.getAllRoles());
+        modelView.addObject("roles", roleService.getAllRoles());
 
         return modelView;
     }

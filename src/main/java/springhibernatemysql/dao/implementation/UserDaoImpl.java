@@ -9,7 +9,6 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.PersistenceContextType;
 import java.util.List;
-import java.util.stream.Collectors;
 
 @Repository
 @Transactional
@@ -41,11 +40,12 @@ public class UserDaoImpl implements UserDao {
     public List<User> getUsersByRole(String role) {
         List<User> users;
 
-        users = em.createQuery("select u from " + User.class.getName() + " u ",
+        users = em.createQuery("select user from " + User.class.getName() + " " +
+                        "user Where user not in ( select u from " + User.class.getName() +
+                        " u join u.grantedAuthorities rs  Where rs.role = 'ROLE_ADMIN' )",
                 User.class).getResultList();
-        System.out.println(users.get(0).getAuthorities().contains("ROLE_ADMIN"));
-        return users.stream().filter(u -> !u.getGrantedAuthorities().toString().contains("ROLE_ADMIN")).
-                collect(Collectors.toList());
+
+        return users;
 
     }
 

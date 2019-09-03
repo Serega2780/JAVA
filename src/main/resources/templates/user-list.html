@@ -47,9 +47,12 @@
             <td th:text="${user.email}"></td>
             <td th:text="${user.country}"></td>
             <td>
-                <a th:href="@{/edit(user.id)}">Edit</a>
+                <a th:href="@{'edit?id=' + ${user.id}}">Edit</a>
+
                 &nbsp;&nbsp;&nbsp;&nbsp;
-                <a th:href="@{/delete(user.id)}">Delete</a>
+
+                <a th:href="@{'delete?id=' + ${user.id}}">Delete</a>
+
             </td>
         </tr>
 

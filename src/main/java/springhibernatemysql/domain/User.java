@@ -40,7 +40,7 @@ public class User implements UserDetails {
             joinColumns = @JoinColumn(name = "user_id"),
             inverseJoinColumns = @JoinColumn(name = "role_id")
     )
-    private Collection<Role> grantedAuthorities;
+    private Collection<Role> grantedAuthorities = new ArrayList<>();
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
@@ -49,9 +49,12 @@ public class User implements UserDetails {
     }
 
     public User() {
+      /*
         if (this.getGrantedAuthorities() == null) {
             this.grantedAuthorities = new ArrayList<>();
         }
+        */
+
     }
 
     public int getId() {

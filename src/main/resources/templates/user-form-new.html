@@ -13,7 +13,7 @@
 </center>
 <div align="center">
 
-        <form th:action="@{/insert}" method="post">
+        <form th:action="@{insert}" th:object="${user}" method="POST">
              <table border="1" cellpadding="5">
                 <caption>
                     <h2>
@@ -21,56 +21,45 @@
                     </h2>
                 </caption>
 
-
-                    <input type="hidden" name="id" th:value="${user.id}"/>
-
+                <input type="hidden" th:field="*{id}" />
 
                 <tr>
-                    <th>User Name:</th>
-                    <td>
-                        <input type="text" name="name" size="45"
-                               th:value="${user.name}"/>
-                    </td>
+                    <th>Name:</th>
+                        <td><input type="text" th:field="*{name}"/></td>
                 </tr>
-                <tr>
-                    <th>User Password:</th>
-                    <td>
-                        <input type="password" name="password" size="45"
-                               th:value="${user.password}"/>
-                    </td>
-                </tr>
-                <tr>
-                <tr>
-                 <th>Roles:</th>
+
+                 <tr>
+                     <th>Password:</th>
+                     <td><input type="password" th:field="*{password}"/></td>
+                 </tr>
+
+                 <tr>
+                     <th>Email:</th>
+                     <td><input type="text" th:field="*{email}"/></td>
+                 </tr>
+
+            <tr>
+                 <th>Country:</th>
                  <td>
-                     <select id="grantedAuthorities" name="grantedAuthorities">
+                     <select id="countriesList" name="countriesList" th:field="*{country}">
                          <option value=""> -- </option>
-                         <option th:each="role : ${grantedAuthorities}"
-                                 th:value="${role.getRole()}"
-                                 th:utext="${role.getRole()}"/>
+                         <option th:each="country : ${countriesList}"
+                                 th:value="${country}"
+                                 th:utext="${country}"/>
                      </select>
                  </td>
-
-             </tr>
-                 <tr>
-                     <th>User Email:</th>
-                     <td>
-                         <input type="text" name="email" size="45"
-                                th:value="${user.email}"/>
-
-                     </td>
-                 </tr>
-                 <tr>
-                     <th>Country:</th>
-                     <td>
-                         <select id="countriesList" name="countriesList">
-                             <option value=""> -- </option>
-                             <option th:each="country : ${countriesList}"
-                                     th:value="${country}"
-                                     th:utext="${country}"/>
-                         </select>
-                     </td>
-                 </tr>
+            </tr>
+            <tr>
+                 <th>Roles:</th>
+                 <td>
+                     <select id="roles" name="roles" >
+                         <option value=""> -- </option>
+                         <option th:each="role : ${roles}"
+                                 th:value="${role.getAuthority()}"
+                                 th:utext="${role.getAuthority()}"/>
+                     </select>
+                 </td>
+            </tr>
                 <tr>
                     <td colspan="2" align="center">
                         <button type="submit">Save</button>
