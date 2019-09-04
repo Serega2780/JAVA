@@ -1,19 +1,13 @@
 package springhibernatemysql.service.implementation;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.repository.CrudRepository;
-import org.springframework.security.core.userdetails.UserDetails;
-import org.springframework.security.core.userdetails.UserDetailsService;
-import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.ModelAttribute;
+
 import springhibernatemysql.dao.RoleDao;
 import springhibernatemysql.dao.UserDao;
-import springhibernatemysql.domain.Role;
+
 import springhibernatemysql.domain.User;
 import springhibernatemysql.service.UserService;
 
-import javax.transaction.Transactional;
 import java.util.List;
 
 @Service

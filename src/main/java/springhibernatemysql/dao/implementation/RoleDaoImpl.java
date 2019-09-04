@@ -18,6 +18,8 @@ public class RoleDaoImpl implements RoleDao {
     public Role getRole(int id) {
 
         return em.find(Role.class, id);
+                //em.getReference(Role.class, id);
+                //em.find(Role.class, id);
     }
 
     @Override

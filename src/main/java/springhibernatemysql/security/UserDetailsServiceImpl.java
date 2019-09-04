@@ -1,4 +1,4 @@
-package springhibernatemysql.config;
+package springhibernatemysql.security;
 
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
@@ -6,7 +6,6 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
 import springhibernatemysql.dao.UserDao;
-import springhibernatemysql.domain.User;
 
 @Service
 public class UserDetailsServiceImpl implements UserDetailsService {

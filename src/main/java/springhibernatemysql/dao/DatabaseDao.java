@@ -16,8 +16,12 @@ public class DatabaseDao {
 
     @PostConstruct
     public void init() {
-    //   this.fullFillTables();
+        //   this.fullFillTables();
 
+    }
+
+    public DatabaseDao(EntityManager em) {
+        this.em = em;
     }
 
     public void fullFillTables() {

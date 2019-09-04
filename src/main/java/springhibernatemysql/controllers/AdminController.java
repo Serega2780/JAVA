@@ -66,12 +66,13 @@ public class AdminController {
 
     @PostMapping("/admin/insert")
     public String addUser(@ModelAttribute User user, @RequestParam("roles") String roles) {
-
+        List<Role> authorities = new ArrayList<>();
         if (roles.contains("ROLE_ADMIN")) {
-            user.getGrantedAuthorities().add(roleService.getSingleRole(1));
+            authorities.add(roleService.getSingleRole(1));
         }
 
-        user.getGrantedAuthorities().add(roleService.getSingleRole(2));
+        authorities.add(roleService.getSingleRole(2));
+        user.setGrantedAuthorities(authorities);
         userService.createUser(user);
 
         return "redirect:/admin/list";
@@ -95,18 +96,22 @@ public class AdminController {
 
         return modelView;
     }
-
+/*
     @PostMapping("/admin/update")
     public String editUser(@ModelAttribute User user, @RequestParam("role") String role) {
         //User u = userService.getUserById(user.getId());
+        List<Role> roles = new ArrayList<>();
         if (role.contains("ROLE_ADMIN")) {
-            user.getGrantedAuthorities().add(roleService.getSingleRole(1));
+            roles.add(roleService.getSingleRole(1));
         }
+        roles.add(roleService.getSingleRole(2));
 
-        user.getGrantedAuthorities().add(roleService.getSingleRole(2));
+        user.setGrantedAuthorities(roles);
         userService.createUser(user);
 
         return "redirect:/admin/list";
 
     }
+    */
+
 }

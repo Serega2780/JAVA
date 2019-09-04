@@ -35,7 +35,7 @@ public class User implements UserDetails {
     @Column(name = "country")
     private String country;
 
-    @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.MERGE)
     @JoinTable(name = "users_roles",
             joinColumns = @JoinColumn(name = "user_id"),
             inverseJoinColumns = @JoinColumn(name = "role_id")
@@ -49,11 +49,6 @@ public class User implements UserDetails {
     }
 
     public User() {
-      /*
-        if (this.getGrantedAuthorities() == null) {
-            this.grantedAuthorities = new ArrayList<>();
-        }
-        */
 
     }
 

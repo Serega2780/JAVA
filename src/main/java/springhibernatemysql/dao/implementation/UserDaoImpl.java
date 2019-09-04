@@ -57,7 +57,13 @@ public class UserDaoImpl implements UserDao {
 
     @Override
     public void addUser(User user) {
-        em.merge(user);
+
+        if (user.getId() == 0) {
+            em.persist(user);
+        } else {
+            em.merge(user);
+        }
         em.flush();
+
     }
 }
