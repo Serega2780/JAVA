@@ -1,8 +1,7 @@
 package springhibernatemysql.service;
 
-import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
-import springhibernatemysql.domain.Role;
+
 import springhibernatemysql.domain.User;
 
 import java.util.List;

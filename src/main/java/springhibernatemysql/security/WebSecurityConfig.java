@@ -11,6 +11,8 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.password.NoOpPasswordEncoder;
 
+import org.springframework.security.web.access.AccessDeniedHandler;
+import org.springframework.security.web.authentication.AuthenticationFailureHandler;
 import org.springframework.security.web.authentication.AuthenticationSuccessHandler;
 
 
@@ -32,9 +34,15 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     public static NoOpPasswordEncoder passwordEncoder() {
         return (NoOpPasswordEncoder) NoOpPasswordEncoder.getInstance();
     }
+
     @Bean
-    public AuthenticationSuccessHandler myAuthenticationSuccessHandler(){
+    public AuthenticationSuccessHandler myAuthenticationSuccessHandler() {
         return new MySimpleUrlAuthenticationSuccessHandler();
+    }
+
+    @Bean
+    public AccessDeniedHandler accessDeniedHandler() {
+        return new CustomAccessDeniedHandler();
     }
 
     @Override
@@ -44,7 +52,11 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
         // The pages does not require login
         http.authorizeRequests()
-                .antMatchers("/", "/login", "/logout").permitAll();
+                .antMatchers("/", "/login").not().authenticated()
+                .and()
+                .exceptionHandling().accessDeniedHandler(accessDeniedHandler());
+        http.authorizeRequests()
+                .antMatchers("/logout").permitAll();
         // For ADMIN only.
         http.authorizeRequests()
                 .antMatchers("/admin/**").hasRole("ADMIN")
@@ -62,10 +74,12 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .loginProcessingUrl("/perform_login") // Submit URL
                 .loginPage("/")//
                 .successHandler(myAuthenticationSuccessHandler())
-                //.defaultSuccessUrl("/redirect")//
                 .failureUrl("/")//
                 .usernameParameter("login")//
-                .passwordParameter("password");
+                .passwordParameter("password")
+                .and()
+                .logout()
+                .logoutUrl("/perform_logout");
 
 
     }

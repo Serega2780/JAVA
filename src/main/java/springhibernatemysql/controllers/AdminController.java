@@ -96,22 +96,5 @@ public class AdminController {
 
         return modelView;
     }
-/*
-    @PostMapping("/admin/update")
-    public String editUser(@ModelAttribute User user, @RequestParam("role") String role) {
-        //User u = userService.getUserById(user.getId());
-        List<Role> roles = new ArrayList<>();
-        if (role.contains("ROLE_ADMIN")) {
-            roles.add(roleService.getSingleRole(1));
-        }
-        roles.add(roleService.getSingleRole(2));
-
-        user.setGrantedAuthorities(roles);
-        userService.createUser(user);
-
-        return "redirect:/admin/list";
-
-    }
-    */
 
 }
