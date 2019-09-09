@@ -45,17 +45,17 @@ public class AdminController {
 
 
     @GetMapping("/admin/list")
-    public String home(Model model) {
+    public String home(@ModelAttribute(name = "countriesList") List<String> countries,Model model) {
         model.addAttribute("listUser", userService.getAllUsers());
 
         System.out.println(userService.getAllUsers());
-        return "user-list";
+        return "/user-list.html";
     }
 
     @GetMapping("/admin/new")
     public ModelAndView addForm(@ModelAttribute(name = "countriesList") List<String> countries) {
 
-        ModelAndView modelView = new ModelAndView("user-form-new");
+        ModelAndView modelView = new ModelAndView("/user-form-new.html");
 
         List<Role> roles = roleService.getAllRoles();
         modelView.addObject("roles", roles);
@@ -85,16 +85,16 @@ public class AdminController {
         return new ModelAndView("redirect:/admin/list");
 
     }
-
+/*
     @GetMapping("/admin/edit")
     public ModelAndView showEditForm(@RequestParam("id") int id) {
         User user = userService.getUserById(id);
-        ModelAndView modelView = new ModelAndView("user-form-new");
+        ModelAndView modelView = new ModelAndView("/user-form-new.html");
         modelView.addObject("user", user);
 
         modelView.addObject("roles", roleService.getAllRoles());
 
         return modelView;
     }
-
+*/
 }

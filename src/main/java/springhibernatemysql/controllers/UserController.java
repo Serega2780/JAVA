@@ -26,7 +26,7 @@ public class UserController {
 
     @GetMapping
     public ModelAndView userHome() {
-        ModelAndView modelView = new ModelAndView("user-access");
+        ModelAndView modelView = new ModelAndView("/user-access.html");
 
         List<User> listUser = userService.selectUsersByRole();
         modelView.addObject("listUser", listUser);
