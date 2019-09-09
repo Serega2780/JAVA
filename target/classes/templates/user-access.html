@@ -1,21 +1,71 @@
-<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:th="http://www.thymeleaf.org" xmlns:tyle="http://www.w3.org/1999/xhtml"
-      xmlns:visibility="http://www.w3.org/1999/xhtml">
+<!doctype html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
 <head>
-    <title>Users</title>
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    <a th:href="@{/perform_logout}">Logout</a>
-    <div align="center">
-        <table border="1" cellpadding="5">
-            <caption><h2>List of Users</h2></caption>
-            <tr>
-                <th>ID</th>
-                <th>Name</th>
-                <th>Email</th>
-                <th>Country</th>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Jekyll v3.8.5">
+    <title>Dashboard Template · Bootstrap</title>
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 
-            </tr>
+
+    <style>
+        .bd-placeholder-img {
+            font-size: 1.125rem;
+            text-anchor: middle;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+
+        @media (min-width: 768px) {
+            .bd-placeholder-img-lg {
+                font-size: 3.5rem;
+            }
+        }
+    </style>
+    <!-- Custom styles for this template -->
+    <link href="dashboard.css" rel="stylesheet">
+</head>
+<body>
+<nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#">WebSiteName</a>
+        </div>
+
+        <ul class="nav navbar-nav navbar-right">
+            <li><a href="#" th:href="@{/perform_logout}"><span class="glyphicon glyphicon-user"></span> Logout</a></li>
+
+        </ul>
+    </div>
+</nav>
+
+    <div class="container-fluid">
+
+        <ul class="nav flex-column">
+            <li class="active"><a data-toggle="pill" href="#account">User</a></li>
+
+        </ul>
+    </div>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+    <div align="center">
+        <div class="container">
+            <h3>Hello, <p th:text="${currentUser.name}"/> !!!</h3>
+
+            <table class="table table-striped">
+                <tr>
+                    <th>Id</th>
+                    <th>Login</th>
+                    <th>Email</th>
+                    <th>Country</th>
+                </tr>
+
                 <tr th:each="user : ${listUser}">
                     <td th:text="${user.id}"></td>
                     <td th:text="${user.name}"></td>
@@ -23,10 +73,11 @@
                     <td th:text="${user.country}"></td>
 
                 </tr>
-        </table>
-    </div>
-</head>
-<body>
+            </table>
 
+        </div>
+    </div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 </body>
 </html>

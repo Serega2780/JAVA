@@ -1,7 +1,8 @@
 package springhibernatemysql.controllers;
 
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
+
 import org.springframework.web.bind.annotation.*;
 
 
@@ -11,7 +12,7 @@ import springhibernatemysql.domain.User;
 import springhibernatemysql.service.RoleService;
 import springhibernatemysql.service.UserService;
 
-import javax.validation.Valid;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -46,22 +47,16 @@ public class AdminController {
 
 
     @GetMapping("/admin/list")
-    public String home(Model model) {
-        model.addAttribute("listUser", userService.getAllUsers());
-        model.addAttribute("countriesList", populateCountries());
-        System.out.println(userService.getAllUsers());
-        return "/user-list.html";
-    }
-
-    @GetMapping("/admin/new")
-    public ModelAndView addForm(@ModelAttribute(name = "countriesList") List<String> countries) {
-
-        ModelAndView modelView = new ModelAndView("/user-form-new.html");
-
+    public ModelAndView home() {
+        ModelAndView modelView = new ModelAndView("/user-list.html");
         List<Role> roles = roleService.getAllRoles();
+        User currentUser = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
         modelView.addObject("roles", roles);
+        modelView.addObject("listUser", userService.getAllUsers());
+        modelView.addObject("countriesList", populateCountries());
         modelView.addObject("user", new User());
-
+        modelView.addObject("currentUser", currentUser);
+        System.out.println(userService.getAllUsers());
         return modelView;
     }
 
@@ -86,16 +81,5 @@ public class AdminController {
         return new ModelAndView("redirect:/admin/list");
 
     }
-/*
-    @GetMapping("/admin/edit")
-    public ModelAndView showEditForm(@RequestParam("id") int id) {
-        User user = userService.getUserById(id);
-        ModelAndView modelView = new ModelAndView("/user-form-new.html");
-        modelView.addObject("user", user);
 
-        modelView.addObject("roles", roleService.getAllRoles());
-
-        return modelView;
-    }
-*/
 }
