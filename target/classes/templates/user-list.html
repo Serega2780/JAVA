@@ -39,7 +39,7 @@
         </div>
 
         <ul class="nav navbar-nav navbar-right">
-            <li><a href="#"><span class="glyphicon glyphicon-user"></span> Logout</a></li>
+            <li><a href="#" th:href="@{/perform_logout}"><span class="glyphicon glyphicon-user"></span> Logout</a></li>
 
         </ul>
     </div>
@@ -104,11 +104,13 @@
                                 <td th:text="${user.country}"></td>
                                 <td>
                                     <a th:href="@{'edit?id=' + ${user.id}}" class="btn btn-info"
-                                       data-toggle="modal" data-target=#myModal role="button">Edit</a>
+                                       data-toggle="modal" data-target="#myModal" th:attrappend="data-target=${user.id}" role="button">Edit</a>
 
-
+                                    <form class="form-horizontal" action="#" th:action="@{insert}"
+                                          method="post">
+                                        <fieldset>
                                     <!-- Modal -->
-                                    <div class="modal fade" id="myModal" role="dialog">
+                                    <div class="modal fade" id="myModal" role="dialog" th:attrappend="id=${user.id}">
                                         <div class="modal-dialog modal-lg">
                                             <div class="modal-content">
                                                 <div class="modal-header">
@@ -117,15 +119,76 @@
                                                 </div>
                                                 <div class="modal-body">
                                                     <p>This is a large modal.</p>
+                                                    <table class="table table-striped">
+                                                        <caption>
+
+                                                        </caption>
+
+
+                                                        <tr>
+                                                            <th>Id:</th>
+                                                            <td><input type="text" readonly name="id"
+                                                                       th:value="${user.id}"/></td>
+                                                        </tr>
+
+                                                        <tr>
+                                                            <th>Name:</th>
+                                                            <td><input type="text" name="name"
+                                                                       th:value="${user.name}"/></td>
+                                                        </tr>
+
+                                                        <tr>
+                                                            <th>Password:</th>
+                                                            <td><input type="password"
+                                                                       name="password"
+                                                                       th:value="${user.password}"/></td>
+                                                        </tr>
+
+                                                        <tr>
+                                                            <th>Email:</th>
+                                                            <td><input type="text" name="email"
+                                                                       th:value="${user.email}"/></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>Country:</th>
+                                                            <td>
+                                                                <select id="countriesList" name="country"
+                                                                        path="country" placeholder="country"
+                                                                        class="form-control input-md"
+                                                                        th:value="${user.country}">
+                                                                    <option value=""> -- </option>
+                                                                    <option th:each="country : ${countriesList}"
+                                                                            th:value="${country}"
+                                                                            th:utext="${country}"/>
+                                                                </select>
+                                                            </td>
+                                                        </tr>
+
+                                                        <tr>
+                                                            <th>Roles:</th>
+                                                            <td>
+                                                                <select id="roles" name="roles" >
+                                                                    <option value=""> -- </option>
+                                                                    <option th:value="ROLE_ADMIN"
+                                                                            th:utext="ROLE_ADMIN"/>
+                                                                    <option th:value="ROLE_USER"
+                                                                            th:utext="ROLE_USER"/>
+                                                                </select>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td colspan="2" align="center">
+                                                                <button type="submit">Save</button>
+                                                            </td>
+                                                        </tr>
+                                                    </table>
                                                 </div>
-                                                <div class="modal-footer">
-                                                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                                                </div>
+
                                             </div>
                                         </div>
                                     </div>
-
-
+                                        </fieldset>
+                                    </form>
                     </td>
                                 <td>
                                     <a th:href="@{'delete?id=' + ${user.id}}" class="btn btn-info"
@@ -139,18 +202,16 @@
                 </div>
 
                 <div id="menu1" class="tab-pane fade">
+
                     <h3>New User</h3>
-                    <p>Java is a high level, robust, secured and object-oriented programming language.</p>
+
                 </div>
 
             </div>
-        </div>
-
-    </div>
     <div id="account" class="tab-pane fade">
-        <div class="container">
+
             <p> Hello, World! </p>
-        </div>
+
     </div>
 </div>
 

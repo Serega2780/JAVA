@@ -1,6 +1,7 @@
 springhibernatemysql\service\UserService.class
 springhibernatemysql\dao\implementation\UserDaoImpl.class
 springhibernatemysql\dao\DatabaseDao.class
+springhibernatemysql\domain\UserRole.class
 springhibernatemysql\service\RoleService.class
 springhibernatemysql\security\MySimpleUrlAuthenticationSuccessHandler.class
 springhibernatemysql\dao\implementation\RoleDaoImpl.class
@@ -10,8 +11,10 @@ springhibernatemysql\dao\UserDao.class
 springhibernatemysql\service\implementation\UserServiceImpl.class
 springhibernatemysql\controllers\UserController.class
 springhibernatemysql\security\CustomAccessDeniedHandler.class
+springhibernatemysql\service\RoleServiceImpl.class
 springhibernatemysql\domain\User.class
 springhibernatemysql\security\UserDetailsServiceImpl.class
+springhibernatemysql\service\UserServiceImpl.class
 springhibernatemysql\dao\RoleDao.class
 springhibernatemysql\security\WebSecurityConfig.class
 springhibernatemysql\domain\Role.class

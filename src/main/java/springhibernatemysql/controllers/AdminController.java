@@ -11,6 +11,7 @@ import springhibernatemysql.domain.User;
 import springhibernatemysql.service.RoleService;
 import springhibernatemysql.service.UserService;
 
+import javax.validation.Valid;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -45,9 +46,9 @@ public class AdminController {
 
 
     @GetMapping("/admin/list")
-    public String home(@ModelAttribute(name = "countriesList") List<String> countries,Model model) {
+    public String home(Model model) {
         model.addAttribute("listUser", userService.getAllUsers());
-
+        model.addAttribute("countriesList", populateCountries());
         System.out.println(userService.getAllUsers());
         return "/user-list.html";
     }
