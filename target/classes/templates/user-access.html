@@ -45,19 +45,18 @@
     </div>
 </nav>
 
-    <div class="container-fluid">
-
-        <ul class="nav flex-column">
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-sm-2" >
+			<ul class="nav flex-column">
             <li class="active"><a data-toggle="pill" href="#account">User</a></li>
 
         </ul>
-    </div>
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		</div>
 
-    <div align="center">
-        <div class="container">
-            <h3>Hello, <p th:text="${currentUser.name}"/> !!!</h3>
+		<div class="col-sm-8" >
 
+            <h4> Hello, <b th:text="${currentUser.name}"/> !!!</h4>
             <table class="table table-striped">
                 <tr>
                     <th>Id</th>
@@ -75,8 +74,15 @@
                 </tr>
             </table>
 
-        </div>
-    </div>
+
+		</div>
+
+	</div>
+</div>	
+	
+	
+	
+	
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 </body>

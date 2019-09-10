@@ -52,7 +52,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
         // The pages does not require login
         http.authorizeRequests()
-                .antMatchers("/", "/login").not().authenticated()
+                .antMatchers("/", "/login", "/new-user/**").not().authenticated()
                 .and()
                 .exceptionHandling().accessDeniedHandler(accessDeniedHandler());
         http.authorizeRequests()

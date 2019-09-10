@@ -4,10 +4,13 @@ import org.springframework.stereotype.Repository;
 import springhibernatemysql.dao.RoleDao;
 import springhibernatemysql.domain.Role;
 
+
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
-import java.util.ArrayList;
-import java.util.List;
+
+import java.util.HashSet;
+
+import java.util.Set;
 
 @Repository
 public class RoleDaoImpl implements RoleDao {
@@ -22,10 +25,14 @@ public class RoleDaoImpl implements RoleDao {
     }
 
     @Override
-    public List<Role> getRoles() {
-        List<Role> roles = new ArrayList<>();
-        roles.add(this.getRole(1)); //admin
-        roles.add(this.getRole(2)); //user
-        return roles;
+    public Set<Role> getRoles() {
+        return new HashSet<>(em.createQuery("Select r from " + Role.class.getName() + " r ", Role.class)
+                .getResultList());
+    }
+
+    @Override
+    public Role getRoleByName(String role) {
+        return em.createQuery("Select r from " + Role.class.getName() + " r " + "Where r.role = :role", Role.class)
+                .setParameter("role", role).getSingleResult();
     }
 }

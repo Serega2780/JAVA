@@ -22,13 +22,16 @@
 
     <div class="container">
 
-      <form class="form-signin" th:action="@{/perform_login}" method="post">
+      <form style="width:200px" class="form-signin" th:action="@{/perform_login}" method="post">
         <h2 class="form-signin-heading">Please sign in</h2>
         <label for="login" class="sr-only">Login</label>
         <input type="text" name="login" id="login" class="form-control" placeholder="User name" required autofocus>
         <label for="password" class="sr-only">Password</label>
         <input type="password" name="password" id="password" class="form-control" placeholder="Password" required>
-        <button class="btn btn-lg btn-primary btn-block" type="submit" value="login">Login</button>
+        <button class="btn btn-outline-primary" type="submit" value="login">Login</button>
+      </form>
+      <form style="width:300px" class="form-signup" th:action="@{new-user}" method="GET">
+        <button class="btn btn-outline-info" type="submit" value="signup">Signup</button>
       </form>
 
     </div> <!-- /container -->

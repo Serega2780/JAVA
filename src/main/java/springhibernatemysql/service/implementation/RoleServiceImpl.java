@@ -6,7 +6,8 @@ import springhibernatemysql.domain.Role;
 import springhibernatemysql.service.RoleService;
 
 import javax.transaction.Transactional;
-import java.util.List;
+
+import java.util.Set;
 
 @Service
 public class RoleServiceImpl implements RoleService {
@@ -18,7 +19,7 @@ public class RoleServiceImpl implements RoleService {
 
     @Override
     @Transactional
-    public List<Role> getAllRoles() {
+    public Set<Role> getAllRoles() {
         return roleDao.getRoles();
     }
 
@@ -26,5 +27,10 @@ public class RoleServiceImpl implements RoleService {
     public Role getSingleRole(int id) {
 
         return roleDao.getRole(id);
+    }
+
+    @Override
+    public Role getSingleRoleByName(String role) {
+        return roleDao.getRoleByName(role);
     }
 }
