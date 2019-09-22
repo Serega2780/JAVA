@@ -1,5 +1,7 @@
 package springhibernatemysql.controllers;
 
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 
@@ -22,6 +24,7 @@ import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 @Controller
+//@RestController
 @RequestMapping(value = {
         "/admin/**"
 })
@@ -41,6 +44,10 @@ public class AdminController {
 
 
     @GetMapping("/admin/list")
+ /*   @RequestMapping(value = "/list")
+    public ResponseEntity<Object> getProduct() {
+        return new ResponseEntity<>(userService.getAllUsers(), HttpStatus.OK);
+    }*/
     public ModelAndView home() {
         ModelAndView modelView = new ModelAndView("/user-list.html");
         Set<Role> roles = roleService.getAllRoles();
