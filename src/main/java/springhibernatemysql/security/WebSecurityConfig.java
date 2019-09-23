@@ -50,8 +50,11 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
 
         http.csrf().disable();
+
         http.authorizeRequests()
         .requestMatchers(PathRequest.toStaticResources().atCommonLocations()).permitAll();
+
+
         // The pages does not require login
         http.authorizeRequests()
                 .antMatchers("/", "/login", "/new-user/**").not().authenticated()
