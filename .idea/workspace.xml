@@ -2,179 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2d8862be-030e-4099-bda0-9113b24523af" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/js/user-list.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/springboot2_hibernate_jsp_mysql_war.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/springboot2_hibernate_jsp_mysql_war_exploded.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/springboot2_webapp_jsp_war.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/springboot2_webapp_jsp_war_exploded.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__antlr_antlr_2_7_7.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__ch_qos_logback_logback_classic_1_2_3.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__ch_qos_logback_logback_core_1_2_3.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_classmate_1_3_4.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_annotations_2_9_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_core_2_9_6.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_databind_2_9_6.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_datatype_jackson_datatype_jdk8_2_9_6.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_datatype_jackson_datatype_jsr310_2_9_6.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_module_jackson_module_parameter_names_2_9_6.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_jayway_jsonpath_json_path_2_4_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_vaadin_external_google_android_json_0_0_20131108_vaadin1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_zaxxer_HikariCP_2_7_9.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__dom4j_dom4j_1_6_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__javax_annotation_javax_annotation_api_1_3_2.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__javax_servlet_jstl_1_2.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__javax_transaction_javax_transaction_api_1_2.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__javax_validation_validation_api_2_0_1_Final.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__junit_junit_4_12.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__mysql_mysql_connector_java_5_1_46.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__net_bytebuddy_byte_buddy_1_7_11.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__net_bytebuddy_byte_buddy_agent_1_7_11.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__net_minidev_accessors_smart_1_2.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__net_minidev_json_smart_2_3.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_logging_log4j_log4j_api_2_10_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_logging_log4j_log4j_to_slf4j_2_10_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_aspectj_aspectjweaver_1_8_13.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_assertj_assertj_core_3_9_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_hamcrest_hamcrest_core_1_3.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_hamcrest_hamcrest_library_1_3.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_hibernate_common_hibernate_commons_annotations_5_0_1_Final.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_hibernate_hibernate_core_5_2_17_Final.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_hibernate_javax_persistence_hibernate_jpa_2_1_api_1_0_2_Final.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_hibernate_validator_hibernate_validator_6_0_11_Final.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_javassist_javassist_3_22_0_GA.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_jboss_jandex_2_0_3_Final.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_jboss_logging_jboss_logging_3_3_2_Final.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_mockito_mockito_core_2_15_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_objenesis_objenesis_2_6.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_projectlombok_lombok_1_16_22.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_skyscreamer_jsonassert_1_5_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_slf4j_jul_to_slf4j_1_7_25.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_slf4j_slf4j_api_1_7_25.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_2_0_4_RELEASE.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_autoconfigure_2_0_4_RELEASE.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_devtools_2_0_4_RELEASE.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_2_0_4_RELEASE.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_aop_2_0_4_RELEASE.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_data_jpa_2_0_4_RELEASE.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_jdbc_2_0_4_RELEASE.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_json_2_0_4_RELEASE.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_logging_2_0_4_RELEASE.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_security_2_0_4_RELEASE.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_web_2_0_4_RELEASE.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_data_spring_data_commons_2_0_9_RELEASE.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_data_spring_data_jpa_2_0_9_RELEASE.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_security_spring_security_config_5_0_7_RELEASE.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_security_spring_security_core_5_0_7_RELEASE.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_security_spring_security_web_5_0_7_RELEASE.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_aop_5_0_8_RELEASE.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_aspects_5_0_8_RELEASE.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_beans_5_0_8_RELEASE.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_context_5_0_8_RELEASE.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_core_5_0_8_RELEASE.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_expression_5_0_8_RELEASE.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_jcl_5_0_8_RELEASE.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_jdbc_5_0_8_RELEASE.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_orm_5_0_8_RELEASE.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_tx_5_0_8_RELEASE.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_web_5_0_8_RELEASE.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_webmvc_5_0_8_RELEASE.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_webjars_bootstrap_3_3_7.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_webjars_jquery_1_11_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_xmlunit_xmlunit_core_2_5_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_yaml_snakeyaml_1_19.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mvnw" beforeDir="false" afterPath="$PROJECT_DIR$/mvnw" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mvnw.cmd" beforeDir="false" afterPath="$PROJECT_DIR$/mvnw.cmd" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/springboot2-hibernate-jsp-mysql.iml" beforeDir="false" afterPath="$PROJECT_DIR$/springboot2-hibernate-jsp-mysql.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/springhibernatemysql/Springboot2HibernateMysqlJSPApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/springhibernatemysql/Springboot2HibernateMysqlJSPApplication.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/springhibernatemysql/controllers/AdminController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/springhibernatemysql/controllers/AdminController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/springhibernatemysql/controllers/SignupController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/springhibernatemysql/controllers/SignupController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/springhibernatemysql/controllers/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/springhibernatemysql/controllers/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/springhibernatemysql/dao/DatabaseDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/springhibernatemysql/dao/DatabaseDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/springhibernatemysql/dao/RoleDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/springhibernatemysql/dao/RoleDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/springhibernatemysql/dao/UserDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/springhibernatemysql/dao/UserDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/springhibernatemysql/dao/implementation/RoleDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/springhibernatemysql/dao/implementation/RoleDaoImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/springhibernatemysql/dao/implementation/UserDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/springhibernatemysql/dao/implementation/UserDaoImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/springhibernatemysql/domain/Role.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/springhibernatemysql/domain/Role.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/springhibernatemysql/domain/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/springhibernatemysql/domain/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/springhibernatemysql/security/CustomAccessDeniedHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/springhibernatemysql/security/CustomAccessDeniedHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/springhibernatemysql/security/MySimpleUrlAuthenticationSuccessHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/springhibernatemysql/security/MySimpleUrlAuthenticationSuccessHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/springhibernatemysql/security/UserDetailsServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/springhibernatemysql/security/UserDetailsServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/springhibernatemysql/security/WebSecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/springhibernatemysql/security/WebSecurityConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/springhibernatemysql/service/RoleService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/springhibernatemysql/service/RoleService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/springhibernatemysql/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/springhibernatemysql/service/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/springhibernatemysql/service/implementation/PopulateCountries.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/springhibernatemysql/service/implementation/PopulateCountries.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/springhibernatemysql/service/implementation/RoleServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/springhibernatemysql/service/implementation/RoleServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/springhibernatemysql/service/implementation/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/springhibernatemysql/service/implementation/UserServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/css/bootstrap-grid.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/css/bootstrap-grid.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/css/bootstrap-grid.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/css/bootstrap-grid.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/css/bootstrap-reboot.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/css/bootstrap-reboot.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/css/bootstrap-reboot.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/css/bootstrap-reboot.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/css/bootstrap.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/css/bootstrap.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/css/bootstrap.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/css/bootstrap.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/bootstrap.bundle.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/bootstrap.bundle.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/bootstrap.bundle.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/bootstrap.bundle.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/bootstrap.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/bootstrap.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/bootstrap.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/bootstrap.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/login.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/login.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/new-user.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/new-user.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/user-access.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/user-access.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/user-list.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/user-list.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/user-list.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/user-list.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/springhibernatemysql/Springboot2HibernateMysqlJSPApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/springhibernatemysql/Springboot2HibernateMysqlJSPApplication.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/springhibernatemysql/controllers/AdminController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/springhibernatemysql/controllers/AdminController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/springhibernatemysql/dao/implementation/RoleDaoImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/springhibernatemysql/dao/implementation/RoleDaoImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/springhibernatemysql/dao/implementation/UserDaoImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/springhibernatemysql/dao/implementation/UserDaoImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/springhibernatemysql/security/WebSecurityConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/springhibernatemysql/security/WebSecurityConfig.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/css/bootstrap-grid.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/css/bootstrap-grid.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/css/bootstrap-grid.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/css/bootstrap-grid.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/css/bootstrap-reboot.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/css/bootstrap-reboot.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/css/bootstrap-reboot.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/css/bootstrap-reboot.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/css/bootstrap.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/css/bootstrap.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/css/bootstrap.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/css/bootstrap.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/js/bootstrap.bundle.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/js/bootstrap.bundle.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/js/bootstrap.bundle.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/js/bootstrap.bundle.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/js/bootstrap.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/js/bootstrap.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/js/bootstrap.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/js/bootstrap.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/js/login.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/js/login.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/new-user.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/new-user.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/user-access.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/user-access.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/springhibernatemysql/security/MySimpleUrlAuthenticationSuccessHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/springhibernatemysql/security/MySimpleUrlAuthenticationSuccessHandler.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/templates/user-list.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/user-list.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-archiver/pom.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/springboot2-webapp-jsp-0.0.1-SNAPSHOT.war" beforeDir="false" afterPath="$PROJECT_DIR$/target/springboot2-webapp-jsp-0.0.1-SNAPSHOT.war" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/springboot2-webapp-jsp-0.0.1-SNAPSHOT.war.original" beforeDir="false" afterPath="$PROJECT_DIR$/target/springboot2-webapp-jsp-0.0.1-SNAPSHOT.war.original" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/springboot2-webapp-jsp-0.0.1-SNAPSHOT/WEB-INF/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/springboot2-webapp-jsp-0.0.1-SNAPSHOT/WEB-INF/classes/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/springboot2-webapp-jsp-0.0.1-SNAPSHOT/WEB-INF/classes/springhibernatemysql/Springboot2HibernateMysqlJSPApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/springboot2-webapp-jsp-0.0.1-SNAPSHOT/WEB-INF/classes/springhibernatemysql/Springboot2HibernateMysqlJSPApplication.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/springboot2-webapp-jsp-0.0.1-SNAPSHOT/WEB-INF/classes/springhibernatemysql/controllers/AdminController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/springboot2-webapp-jsp-0.0.1-SNAPSHOT/WEB-INF/classes/springhibernatemysql/controllers/AdminController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/springboot2-webapp-jsp-0.0.1-SNAPSHOT/WEB-INF/classes/springhibernatemysql/dao/implementation/RoleDaoImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/springboot2-webapp-jsp-0.0.1-SNAPSHOT/WEB-INF/classes/springhibernatemysql/dao/implementation/RoleDaoImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/springboot2-webapp-jsp-0.0.1-SNAPSHOT/WEB-INF/classes/springhibernatemysql/dao/implementation/UserDaoImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/springboot2-webapp-jsp-0.0.1-SNAPSHOT/WEB-INF/classes/springhibernatemysql/dao/implementation/UserDaoImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/springboot2-webapp-jsp-0.0.1-SNAPSHOT/WEB-INF/classes/springhibernatemysql/security/WebSecurityConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/springboot2-webapp-jsp-0.0.1-SNAPSHOT/WEB-INF/classes/springhibernatemysql/security/WebSecurityConfig.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/springboot2-webapp-jsp-0.0.1-SNAPSHOT/WEB-INF/classes/static/css/bootstrap-grid.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/springboot2-webapp-jsp-0.0.1-SNAPSHOT/WEB-INF/classes/static/css/bootstrap-grid.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/springboot2-webapp-jsp-0.0.1-SNAPSHOT/WEB-INF/classes/static/css/bootstrap-grid.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/springboot2-webapp-jsp-0.0.1-SNAPSHOT/WEB-INF/classes/static/css/bootstrap-grid.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/springboot2-webapp-jsp-0.0.1-SNAPSHOT/WEB-INF/classes/static/css/bootstrap-reboot.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/springboot2-webapp-jsp-0.0.1-SNAPSHOT/WEB-INF/classes/static/css/bootstrap-reboot.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/springboot2-webapp-jsp-0.0.1-SNAPSHOT/WEB-INF/classes/static/css/bootstrap-reboot.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/springboot2-webapp-jsp-0.0.1-SNAPSHOT/WEB-INF/classes/static/css/bootstrap-reboot.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/springboot2-webapp-jsp-0.0.1-SNAPSHOT/WEB-INF/classes/static/css/bootstrap.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/springboot2-webapp-jsp-0.0.1-SNAPSHOT/WEB-INF/classes/static/css/bootstrap.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/springboot2-webapp-jsp-0.0.1-SNAPSHOT/WEB-INF/classes/static/css/bootstrap.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/springboot2-webapp-jsp-0.0.1-SNAPSHOT/WEB-INF/classes/static/css/bootstrap.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/springboot2-webapp-jsp-0.0.1-SNAPSHOT/WEB-INF/classes/static/js/bootstrap.bundle.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/springboot2-webapp-jsp-0.0.1-SNAPSHOT/WEB-INF/classes/static/js/bootstrap.bundle.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/springboot2-webapp-jsp-0.0.1-SNAPSHOT/WEB-INF/classes/static/js/bootstrap.bundle.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/springboot2-webapp-jsp-0.0.1-SNAPSHOT/WEB-INF/classes/static/js/bootstrap.bundle.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/springboot2-webapp-jsp-0.0.1-SNAPSHOT/WEB-INF/classes/static/js/bootstrap.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/springboot2-webapp-jsp-0.0.1-SNAPSHOT/WEB-INF/classes/static/js/bootstrap.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/springboot2-webapp-jsp-0.0.1-SNAPSHOT/WEB-INF/classes/static/js/bootstrap.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/springboot2-webapp-jsp-0.0.1-SNAPSHOT/WEB-INF/classes/static/js/bootstrap.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/springboot2-webapp-jsp-0.0.1-SNAPSHOT/WEB-INF/classes/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/springboot2-webapp-jsp-0.0.1-SNAPSHOT/WEB-INF/classes/templates/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/springboot2-webapp-jsp-0.0.1-SNAPSHOT/WEB-INF/classes/templates/login.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/springboot2-webapp-jsp-0.0.1-SNAPSHOT/WEB-INF/classes/templates/new-user.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/springboot2-webapp-jsp-0.0.1-SNAPSHOT/WEB-INF/classes/templates/new-user.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/springboot2-webapp-jsp-0.0.1-SNAPSHOT/WEB-INF/classes/templates/user-access.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/springboot2-webapp-jsp-0.0.1-SNAPSHOT/WEB-INF/classes/templates/user-access.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/springboot2-webapp-jsp-0.0.1-SNAPSHOT/WEB-INF/classes/templates/user-list.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/springboot2-webapp-jsp-0.0.1-SNAPSHOT/WEB-INF/classes/templates/user-list.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -201,6 +36,10 @@
   </component>
   <component name="ProjectId" id="1REo8uf9qDrt0Pi5fcRNTn9nk9A" />
   <component name="PropertiesComponent">
+    <property name="RequestMappingsPanelOrder0" value="0" />
+    <property name="RequestMappingsPanelOrder1" value="1" />
+    <property name="RequestMappingsPanelWidth0" value="75" />
+    <property name="RequestMappingsPanelWidth1" value="75" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
@@ -236,7 +75,8 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1569241459541</updated>
-      <workItem from="1569241461608" duration="4119000" />
+      <workItem from="1569241461608" duration="5195000" />
+      <workItem from="1569312710212" duration="11290000" />
     </task>
     <servers />
   </component>
@@ -248,10 +88,23 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
     </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/springhibernatemysql/controllers/AdminController.java</url>
+          <line>45</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

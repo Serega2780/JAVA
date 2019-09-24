@@ -16,7 +16,6 @@ import springhibernatemysql.service.UserService;
 import springhibernatemysql.service.implementation.PopulateCountries;
 
 
-
 import java.util.HashSet;
 
 import java.util.Set;
@@ -24,7 +23,7 @@ import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 @Controller
-//@RestController
+@RestController
 @RequestMapping(value = {
         "/admin/**"
 })
@@ -42,12 +41,14 @@ public class AdminController {
         this.populateCountries = populateCountries;
     }
 
+    @RequestMapping(value = "/admin/users")
+    public ResponseEntity<Object> getProduct() {
+        int i = 0;
+        return new ResponseEntity<>(userService.getAllUsers(), HttpStatus.OK);
+    }
 
     @GetMapping("/admin/list")
- /*   @RequestMapping(value = "/list")
-    public ResponseEntity<Object> getProduct() {
-        return new ResponseEntity<>(userService.getAllUsers(), HttpStatus.OK);
-    }*/
+
     public ModelAndView home() {
         ModelAndView modelView = new ModelAndView("/user-list.html");
         Set<Role> roles = roleService.getAllRoles();
@@ -64,7 +65,7 @@ public class AdminController {
     @PostMapping("/admin/insert")
     public String addUser(@ModelAttribute User user, @RequestParam("roles") String roles) {
         Set<Role> grandAuthorities = new HashSet<>();
-        Stream.of((roles+",ROLE_USER").split(","))
+        Stream.of((roles + ",ROLE_USER").split(","))
                 .map(elem -> new String(elem))
                 .collect(Collectors.toList()).forEach(r -> grandAuthorities.add(roleService.getSingleRoleByName(r)));
 

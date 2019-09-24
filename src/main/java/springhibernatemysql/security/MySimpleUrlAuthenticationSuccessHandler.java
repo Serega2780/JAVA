@@ -20,7 +20,7 @@ public class MySimpleUrlAuthenticationSuccessHandler implements AuthenticationSu
 
         for (Role role : roles) {
             if (role.getAuthority().equals("ROLE_ADMIN")) {
-                httpServletResponse.sendRedirect("/admin/list");
+                httpServletResponse.sendRedirect("admin/list");
                 return;
             }
         }
