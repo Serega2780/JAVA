@@ -42,9 +42,13 @@ public class AdminController {
     }
 
     @RequestMapping(value = "/admin/users")
-    public ResponseEntity<Object> getProduct() {
-        int i = 0;
+    public ResponseEntity<Object> getUsers() {
         return new ResponseEntity<>(userService.getAllUsers(), HttpStatus.OK);
+    }
+
+    @RequestMapping(value = "/admin/edit")
+    public ResponseEntity<Object> getUser(@RequestParam("id") int id) {
+        return new ResponseEntity<>(userService.getUserById(id), HttpStatus.OK);
     }
 
     @GetMapping("/admin/list")
@@ -63,7 +67,7 @@ public class AdminController {
     }
 
     @PostMapping("/admin/insert")
-    public String addUser(@ModelAttribute User user, @RequestParam("roles") String roles) {
+    public ModelAndView addUser(@ModelAttribute User user, @RequestParam("roles") String roles) {
         Set<Role> grandAuthorities = new HashSet<>();
         Stream.of((roles + ",ROLE_USER").split(","))
                 .map(elem -> new String(elem))
@@ -72,7 +76,7 @@ public class AdminController {
         user.setGrantedAuthorities(grandAuthorities);
         userService.createUser(user);
 
-        return "redirect:/admin/list";
+        return new ModelAndView("redirect:/admin/list");
     }
 
     @GetMapping("/admin/delete")

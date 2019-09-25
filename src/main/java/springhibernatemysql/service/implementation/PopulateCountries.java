@@ -15,7 +15,7 @@ public class PopulateCountries {
 
         List<String> countries = new ArrayList<>();
         countries.add("India");
-        countries.add("United States");
+        countries.add("USA");
         countries.add("Japan");
         countries.add("Australia");
         countries.add("Canada");

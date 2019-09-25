@@ -4,12 +4,9 @@
     <list default="true" id="2d8862be-030e-4099-bda0-9113b24523af" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/springhibernatemysql/controllers/AdminController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/springhibernatemysql/controllers/AdminController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/springhibernatemysql/security/MySimpleUrlAuthenticationSuccessHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/springhibernatemysql/security/MySimpleUrlAuthenticationSuccessHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/springhibernatemysql/service/implementation/PopulateCountries.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/springhibernatemysql/service/implementation/PopulateCountries.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/user-list.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/user-list.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/user-list.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/user-list.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/springhibernatemysql/controllers/AdminController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/springhibernatemysql/controllers/AdminController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/springhibernatemysql/security/MySimpleUrlAuthenticationSuccessHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/springhibernatemysql/security/MySimpleUrlAuthenticationSuccessHandler.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/user-list.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/user-list.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -76,7 +73,7 @@
       <option name="presentableId" value="Default" />
       <updated>1569241459541</updated>
       <workItem from="1569241461608" duration="5195000" />
-      <workItem from="1569312710212" duration="11290000" />
+      <workItem from="1569312710212" duration="29648000" />
     </task>
     <servers />
   </component>
@@ -95,16 +92,5 @@
         </entry>
       </map>
     </option>
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/springhibernatemysql/controllers/AdminController.java</url>
-          <line>45</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>
