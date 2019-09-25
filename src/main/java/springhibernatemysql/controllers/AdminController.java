@@ -48,25 +48,44 @@ public class AdminController {
 
     @RequestMapping(value = "/admin/edit")
     public ResponseEntity<Object> getUser(@RequestParam("id") int id) {
-        return new ResponseEntity<>(userService.getUserById(id), HttpStatus.OK);
+        ResponseEntity<Object> responseEntity = new ResponseEntity<>(userService.getUserById(id), HttpStatus.OK);
+        System.out.println(responseEntity);
+        return responseEntity;
+    }
+
+    @RequestMapping(value = "/admin/countries")
+    public ResponseEntity<Object> getCountries() {
+        return new ResponseEntity<>(populateCountries.populateCountries(), HttpStatus.OK);
+    }
+
+    @RequestMapping(value = "/admin/roles")
+    public ResponseEntity<Object> getRoles() {
+        Set<Role> roles = roleService.getAllRoles();
+        System.out.println(roles);
+        return new ResponseEntity<>(roles, HttpStatus.OK);
     }
 
     @GetMapping("/admin/list")
 
     public ModelAndView home() {
         ModelAndView modelView = new ModelAndView("/user-list.html");
-        Set<Role> roles = roleService.getAllRoles();
+        //Set<Role> roles = roleService.getAllRoles();
         User currentUser = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
-        modelView.addObject("roles", roles);
+       // modelView.addObject("roles", roles);
         modelView.addObject("listUser", userService.getAllUsers());
-        modelView.addObject("countriesList", populateCountries.populateCountries());
+       // modelView.addObject("countriesList", populateCountries.populateCountries());
         modelView.addObject("user", new User());
         modelView.addObject("currentUser", currentUser);
-        System.out.println(userService.getAllUsers());
+      //  System.out.println(userService.getAllUsers());
         return modelView;
     }
 
-    @PostMapping("/admin/insert")
+    @PutMapping("/admin/insert")
+    @ResponseBody
+    public void rrr(@RequestBody User user){
+        int i=0;
+        user.getName();
+    }
     public ModelAndView addUser(@ModelAttribute User user, @RequestParam("roles") String roles) {
         Set<Role> grandAuthorities = new HashSet<>();
         Stream.of((roles + ",ROLE_USER").split(","))

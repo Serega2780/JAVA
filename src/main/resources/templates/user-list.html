@@ -100,7 +100,7 @@
                             <div class="modal-dialog modal-lg">
                                 <div class="modal-content">
                                     <div class="modal-header">
-                                        <button type="button" class="close"
+                                        <button type="button" id="modalClose" class="close"
                                                 data-dismiss="modal">×
                                         </button>
                                         <h4 class="modal-title">Edit user</h4>
@@ -132,7 +132,7 @@
                                                 <td>
                                                     <select id="countryList"
                                                             name="country">
-                                                        <option value="default" selected="selected"></option>
+
 
                                                         <option value=""> --</option>
 
@@ -145,22 +145,13 @@
                                                 <td>
                                                     <select id="roles" name="roles"
                                                             multiple="multiple">
-                                                        <option th:each="authority : ${user.getGrantedAuthorities()}"
-                                                                th:value="${authority.getAuthority()}"
-                                                                selected="selected"
-                                                                style="font-weight: bold;"
-                                                                th:utext="${authority.getAuthority()}"/>
-                                                        <option value=""> --</option>
-                                                        <option th:each="role : ${roles}"
-                                                                th:value="${role.getAuthority()}"
-                                                                th:utext="${role.getAuthority()}"/>
 
                                                     </select>
                                                 </td>
                                             </tr>
                                             <tr>
                                                 <td colspan="2" align="center">
-                                                    <button type="submit">Save</button>
+                                                    <button id="modalSave" type="submit">Save</button>
                                                 </td>
                                             </tr>
                                         </table>
