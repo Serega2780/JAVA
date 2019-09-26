@@ -67,8 +67,8 @@
 
                     <h4> Admin panel</h4>
                     <ul class="nav nav-tabs">
-                        <li class="active"><a data-toggle="tab" href="#home">Users table</a></li>
-                        <li><a data-toggle="tab" href="#menu1">New User</a></li>
+                        <li class="active"><a id="mainList" data-toggle="tab" href="#home">Users table</a></li>
+                        <li><a id="newUserAdd" data-toggle="tab" href="#menu1">New User</a></li>
                     </ul>
                     <div class="tab-content">
                         <div id="home" class="tab-pane fade in active">
@@ -161,56 +161,44 @@
                         </div>
 
 
-                        <div id="menu1" class="tab-pane fade">
+                        <div id="menu1" class="tab-pane fade" >
                             <div class="container">
                                 <h3>Add New User</h3>
-                                <form style="width:300px" action="#1" th:object="${user}" th:action="@{insert}"
-                                      method="post">
+                                <form id="newUser" style="width:300px" action="#1">
                                     <div class="form-group">
                                         <label for="login">Login</label>
-                                        <input type="text" class="form-control" id="login" placeholder="Login"
-                                               th:field="*{name}">
+                                        <input type="text" class="form-control" id="login" placeholder="Login">
                                     </div>
                                     <div class="form-group">
                                         <label for="password">Password</label>
-                                        <input type="password" class="form-control" id="password" placeholder="Password"
-                                               th:field="*{password}">
+                                        <input type="password" class="form-control" id="password"
+                                               placeholder="Password">
                                     </div>
                                     <div class="form-group">
                                         <label for="email">Email</label>
-                                        <input type="email" class="form-control" id="email" placeholder="Email"
-                                               th:field="*{email}">
+                                        <input type="email" class="form-control" id="email" placeholder="Email">
                                     </div>
                                     <div class="form-group">
                                         <label for="roles">Role</label>
 
-                                        <select id="roles" name="roles" multiple="multiple">
-                                            <option th:each="authority : ${user.getGrantedAuthorities()}"
-                                                    th:value="${authority.getAuthority()}"
-                                                    selected="selected"
-                                                    style="font-weight: bold;"
-                                                    th:utext="${authority.getAuthority()}"/>
+                                        <select id="rolesForNewUser" name="roles" multiple="multiple">
+
                                             <option value=""> --</option>
-                                            <option th:each="role : ${roles}"
-                                                    th:value="${role.getAuthority()}"
-                                                    th:utext="${role.getAuthority()}"/>
 
                                         </select>
 
                                     </div>
                                     <div class="form-group">
-                                        <label for="countriesList">Country</label>
+                                        <label for="countryListForNewUser">Country</label>
 
-                                        <select id="countriesList" name="countriesList" th:field="*{country}">
+                                        <select id="countryListForNewUser" name="countriesList">
                                             <option value=""> --</option>
-                                            <option th:each="country : ${countriesList}"
-                                                    th:value="${country}"
-                                                    th:utext="${country}"/>
+
                                         </select>
 
                                     </div>
 
-                                    <button type="submit" class="btn btn-default">Login</button>
+                                    <button type="submit" id="userCreateButton" class="btn btn-default">Create</button>
                                 </form>
 
                             </div>

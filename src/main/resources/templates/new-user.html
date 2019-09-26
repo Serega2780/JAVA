@@ -1,7 +1,8 @@
 <!doctype html>
-<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script type="application/javascript" src="/js/new-user.js"></script>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
@@ -36,32 +37,26 @@
 <div align="center">
     <div class="container">
 
-        <form style="width:300px" action="#1" th:object="${user}" th:action="@{/new-user/insert}"
-              method="post">
+        <form id="newSignup" style="width:300px" action="/" >
             <div class="form-group">
                 <label for="login">Login</label>
-                <input type="text" class="form-control" id="login" placeholder="Login"
-                       th:field="*{name}">
+                <input type="text" class="form-control" id="login" placeholder="Login">
             </div>
             <div class="form-group">
                 <label for="password">Password</label>
-                <input type="password" class="form-control" id="password" placeholder="Password"
-                       th:field="*{password}">
+                <input type="password" class="form-control" id="password" placeholder="Password">
             </div>
             <div class="form-group">
                 <label for="email">Email</label>
-                <input type="email" class="form-control" id="email" placeholder="Email"
-                       th:field="*{email}">
+                <input type="email" class="form-control" id="email" placeholder="Email">
             </div>
 
             <div class="form-group">
-                <label for="countriesList">Country</label>
+                <label for="newCountryList">Country</label>
 
-                <select id="countriesList" name="countriesList" th:field="*{country}">
+                <select id="newCountryList" name="countriesList">
                     <option value=""> -- </option>
-                    <option th:each="country : ${countriesList}"
-                            th:value="${country}"
-                            th:utext="${country}"/>
+
                 </select>
 
             </div>

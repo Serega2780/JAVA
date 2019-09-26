@@ -16,6 +16,7 @@ import springhibernatemysql.service.UserService;
 import springhibernatemysql.service.implementation.PopulateCountries;
 
 
+import javax.websocket.server.PathParam;
 import java.util.HashSet;
 
 import java.util.Set;
@@ -41,6 +42,15 @@ public class AdminController {
         this.populateCountries = populateCountries;
     }
 
+    @GetMapping("/admin/list")
+    public ModelAndView home() {
+        ModelAndView modelView = new ModelAndView("/user-list.html");
+        User currentUser = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        modelView.addObject("currentUser", currentUser);
+        return modelView;
+    }
+
+    //REST
     @RequestMapping(value = "/admin/users")
     public ResponseEntity<Object> getUsers() {
         return new ResponseEntity<>(userService.getAllUsers(), HttpStatus.OK);
@@ -48,9 +58,13 @@ public class AdminController {
 
     @RequestMapping(value = "/admin/edit")
     public ResponseEntity<Object> getUser(@RequestParam("id") int id) {
-        ResponseEntity<Object> responseEntity = new ResponseEntity<>(userService.getUserById(id), HttpStatus.OK);
-        System.out.println(responseEntity);
-        return responseEntity;
+        return new ResponseEntity<>(userService.getUserById(id), HttpStatus.OK);
+    }
+
+    @DeleteMapping(value = "/admin/delete")
+    public ResponseEntity<Object> deleteUser(@RequestParam("id") int id) {
+        userService.deleteUser(id);
+        return new ResponseEntity<>(HttpStatus.OK);
     }
 
     @RequestMapping(value = "/admin/countries")
@@ -60,50 +74,18 @@ public class AdminController {
 
     @RequestMapping(value = "/admin/roles")
     public ResponseEntity<Object> getRoles() {
-        Set<Role> roles = roleService.getAllRoles();
-        System.out.println(roles);
-        return new ResponseEntity<>(roles, HttpStatus.OK);
+        return new ResponseEntity<>(roleService.getAllRoles(), HttpStatus.OK);
     }
 
-    @GetMapping("/admin/list")
-
-    public ModelAndView home() {
-        ModelAndView modelView = new ModelAndView("/user-list.html");
-        //Set<Role> roles = roleService.getAllRoles();
-        User currentUser = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
-       // modelView.addObject("roles", roles);
-        modelView.addObject("listUser", userService.getAllUsers());
-       // modelView.addObject("countriesList", populateCountries.populateCountries());
-        modelView.addObject("user", new User());
-        modelView.addObject("currentUser", currentUser);
-      //  System.out.println(userService.getAllUsers());
-        return modelView;
+    @RequestMapping(value = "/admin/role")
+    public ResponseEntity<Object> getRole(@RequestParam("role") String roleName) {
+        return new ResponseEntity<>(roleService.getSingleRoleByName(roleName), HttpStatus.OK);
     }
 
     @PutMapping("/admin/insert")
     @ResponseBody
-    public void rrr(@RequestBody User user){
-        int i=0;
-        user.getName();
-    }
-    public ModelAndView addUser(@ModelAttribute User user, @RequestParam("roles") String roles) {
-        Set<Role> grandAuthorities = new HashSet<>();
-        Stream.of((roles + ",ROLE_USER").split(","))
-                .map(elem -> new String(elem))
-                .collect(Collectors.toList()).forEach(r -> grandAuthorities.add(roleService.getSingleRoleByName(r)));
-
-        user.setGrantedAuthorities(grandAuthorities);
+    public void addUpdateUser(@RequestBody User user) {
         userService.createUser(user);
-
-        return new ModelAndView("redirect:/admin/list");
-    }
-
-    @GetMapping("/admin/delete")
-    public ModelAndView deleteUser(@RequestParam("id") int id) {
-
-        userService.deleteUser(id);
-        return new ModelAndView("redirect:/admin/list");
-
     }
 
 }

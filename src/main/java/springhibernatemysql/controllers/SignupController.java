@@ -1,5 +1,7 @@
 package springhibernatemysql.controllers;
 
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
@@ -13,6 +15,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Controller
+@RestController
 @RequestMapping(value = {
         "/new-user/**"
 })
@@ -29,14 +32,25 @@ public class SignupController {
         this.userService = userService;
     }
 
+    //REST
+
+    @RequestMapping(value = "/new-user/countries")
+    public ResponseEntity<Object> getCountries() {
+        return new ResponseEntity<>(populateCountries.populateCountries(), HttpStatus.OK);
+    }
+
+    @PostMapping("/new-user/insert")
+    @ResponseBody
+    public String addUpdateUser(@RequestBody User user) {
+        userService.createUser(user);
+        return "redirect:/";
+    }
     @GetMapping("/new-user")
     public ModelAndView showNewUserForm() {
         ModelAndView modelView = new ModelAndView("/new-user.html");
-        modelView.addObject("user", new User());
-        modelView.addObject("countriesList", populateCountries.populateCountries());
         return modelView;
     }
-
+/*
     @PostMapping("/new-user/insert")
     public String addNewUser(@ModelAttribute User user) {
         List<Role> roles = new ArrayList<>();
@@ -46,4 +60,6 @@ public class SignupController {
 
         return "redirect:/";
     }
+
+ */
 }

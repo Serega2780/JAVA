@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns="http://www.w3.org/1999/xhtml" >
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script type="application/javascript" src="/js/login.js"></script>
@@ -30,8 +30,9 @@
         <input type="password" name="password" id="password" class="form-control" placeholder="Password" required>
         <button class="btn btn-outline-primary" type="submit" id="loginIn" value="loginIn">Login</button>
     </form>
-    <form style="width:300px" class="form-signup" action="@{new-user}" method="get">
-        <button class="btn btn-outline-info" type="submit" value="signup">Signup</button>
+    <form style="width:300px" class="form-signup" id="SignupForm" action="new-user">
+        <button class="btn btn-outline-info" id="signup" type="submit" value="signup">Signup
+        </button>
     </form>
 
 </div> <!-- /container -->
