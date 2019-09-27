@@ -2,16 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4343b139-175a-4683-9a46-f0b41d051bcd" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/js/new-user.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/js/user-access.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/springhibernatemysql/controllers/AdminController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/springhibernatemysql/controllers/AdminController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/springhibernatemysql/controllers/SignupController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/springhibernatemysql/controllers/SignupController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/login.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/login.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/user-list.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/user-list.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/new-user.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/new-user.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/user-list.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/user-list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/springhibernatemysql/controllers/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/springhibernatemysql/controllers/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/springhibernatemysql/security/MySimpleUrlAuthenticationSuccessHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/springhibernatemysql/security/MySimpleUrlAuthenticationSuccessHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/springhibernatemysql/security/WebSecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/springhibernatemysql/security/WebSecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/new-user.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/new-user.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/user-access.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/user-access.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -70,7 +68,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1569474583862</updated>
-      <workItem from="1569474585498" duration="26613000" />
+      <workItem from="1569474585498" duration="30154000" />
     </task>
     <servers />
   </component>
@@ -87,16 +85,5 @@
         </entry>
       </map>
     </option>
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/springhibernatemysql/controllers/SignupController.java</url>
-          <line>44</line>
-          <option name="timeStamp" value="8" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>

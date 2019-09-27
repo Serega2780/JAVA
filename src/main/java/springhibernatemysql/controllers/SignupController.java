@@ -5,14 +5,12 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
-import springhibernatemysql.domain.Role;
+
 import springhibernatemysql.domain.User;
 import springhibernatemysql.service.RoleService;
 import springhibernatemysql.service.UserService;
 import springhibernatemysql.service.implementation.PopulateCountries;
 
-import java.util.ArrayList;
-import java.util.List;
 
 @Controller
 @RestController
@@ -50,16 +48,5 @@ public class SignupController {
         ModelAndView modelView = new ModelAndView("/new-user.html");
         return modelView;
     }
-/*
-    @PostMapping("/new-user/insert")
-    public String addNewUser(@ModelAttribute User user) {
-        List<Role> roles = new ArrayList<>();
-        roles.add(roleService.getSingleRole(2));
-        user.setGrantedAuthorities(roles);
-        userService.createUser(user);
 
-        return "redirect:/";
-    }
-
- */
 }

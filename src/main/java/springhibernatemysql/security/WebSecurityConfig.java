@@ -68,7 +68,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .anyRequest().authenticated();
 
         http.authorizeRequests()
-                .antMatchers("/redirect", "/user")
+                .antMatchers("/redirect", "/user/**")
                 .hasAnyRole("ADMIN", "USER")
                 .anyRequest().authenticated();
 

@@ -24,6 +24,6 @@ public class MySimpleUrlAuthenticationSuccessHandler implements AuthenticationSu
                 return;
             }
         }
-        httpServletResponse.sendRedirect("/user");
+        httpServletResponse.sendRedirect("user/list");
     }
 }
