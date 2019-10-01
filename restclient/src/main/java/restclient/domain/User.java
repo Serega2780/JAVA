@@ -1,6 +1,8 @@
 package restclient.domain;
 
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonUnwrapped;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
@@ -14,6 +16,7 @@ import java.util.HashSet;
 @Table(name = "users", //
         uniqueConstraints = { //
                 @UniqueConstraint(name = "USER_UK", columnNames = "name")})
+
 public class User implements UserDetails {
     @Id
     @Column(name = "id")
@@ -39,6 +42,7 @@ public class User implements UserDetails {
             joinColumns = @JoinColumn(name = "user_id"),
             inverseJoinColumns = @JoinColumn(name = "role_id")
     )
+    @JsonUnwrapped
     private Collection<Role> grantedAuthorities = new HashSet<>();
 
     @Override
