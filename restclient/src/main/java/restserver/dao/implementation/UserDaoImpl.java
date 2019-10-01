@@ -1,9 +1,10 @@
-package restclient.dao.implementation;
+package restserver.dao.implementation;
 
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
-import restclient.dao.UserDao;
 import restclient.domain.User;
+import restserver.dao.UserDao;
+
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;

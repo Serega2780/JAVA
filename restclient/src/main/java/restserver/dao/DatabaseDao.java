@@ -1,4 +1,4 @@
-package restclient.dao;
+package restserver.dao;
 
 
 import javax.annotation.PostConstruct;

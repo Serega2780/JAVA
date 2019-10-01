@@ -1,5 +1,4 @@
-package restclient.dao;
-
+package restserver.dao;
 
 import restclient.domain.Role;
 

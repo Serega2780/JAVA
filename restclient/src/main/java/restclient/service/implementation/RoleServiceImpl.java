@@ -1,9 +1,10 @@
 package restclient.service.implementation;
 
 import org.springframework.stereotype.Service;
-import restclient.dao.RoleDao;
+
 import restclient.domain.Role;
 import restclient.service.RoleService;
+import restserver.dao.RoleDao;
 
 import javax.transaction.Transactional;
 

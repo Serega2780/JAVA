@@ -1,8 +1,9 @@
-package restclient.dao.implementation;
+package restserver.dao.implementation;
 
 import org.springframework.stereotype.Repository;
-import restclient.dao.RoleDao;
 import restclient.domain.Role;
+import restserver.dao.RoleDao;
+
 
 
 import javax.persistence.EntityManager;

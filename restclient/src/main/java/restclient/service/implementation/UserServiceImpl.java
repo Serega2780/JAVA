@@ -1,24 +1,25 @@
 package restclient.service.implementation;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
-import restclient.dao.RoleDao;
-import restclient.dao.UserDao;
 
 import restclient.domain.User;
 import restclient.service.UserService;
+import restserver.dao.RoleDao;
+import restserver.dao.UserDao;
 
 import java.util.List;
 
 @Service
 public class UserServiceImpl implements UserService {
-    private final RoleDao roleDao;
+
+ //   private final RoleDao roleDao;
     private final UserDao userDao;
 
-
-    public UserServiceImpl(UserDao userDao, RoleDao roleDao) {
+    public UserServiceImpl(UserDao userDao ){
+                           //RoleDao roleDao) {
         this.userDao = userDao;
-        this.roleDao = roleDao;
+  //      this.roleDao = roleDao;
 
     }
 

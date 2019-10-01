@@ -1,4 +1,4 @@
-package restclient.dao;
+package restserver.dao;
 
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
