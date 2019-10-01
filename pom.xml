@@ -5,11 +5,11 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>net.guides.springboot2</groupId>
-	<artifactId>springboot2-webapp-jsp</artifactId>
+	<artifactId>restclient</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>war</packaging>
 
-	<name>springboot2-webapp-jsp</name>
+	<name>restclient</name>
 	<description>Demo project for Spring Boot</description>
 
 	<parent>
