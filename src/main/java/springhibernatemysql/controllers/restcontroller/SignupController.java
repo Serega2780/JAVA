@@ -1,18 +1,13 @@
-package springhibernatemysql.controllers;
+package springhibernatemysql.controllers.restcontroller;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.servlet.ModelAndView;
-
 import springhibernatemysql.domain.User;
 import springhibernatemysql.service.RoleService;
 import springhibernatemysql.service.UserService;
 import springhibernatemysql.service.implementation.PopulateCountries;
 
-
-@Controller
 @RestController
 @RequestMapping(value = {
         "/new-user/**"
@@ -42,11 +37,6 @@ public class SignupController {
     public String addUpdateUser(@RequestBody User user) {
         userService.createUser(user);
         return "redirect:/";
-    }
-    @GetMapping("/new-user")
-    public ModelAndView showNewUserForm() {
-        ModelAndView modelView = new ModelAndView("/new-user.html");
-        return modelView;
     }
 
 }
