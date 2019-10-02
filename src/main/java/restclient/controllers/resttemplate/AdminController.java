@@ -2,14 +2,12 @@ package restclient.controllers.resttemplate;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
-import com.google.gson.JsonElement;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
+import org.springframework.http.*;
 
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.client.RestTemplate;
 import restclient.domain.User;
-import restclient.service.UserService;
+
 import restclient.service.implementation.PopulateCountries;
 
 
@@ -23,14 +21,9 @@ import java.util.Map;
 
 public class AdminController {
 
-    private UserService userService;
-
     private PopulateCountries populateCountries;
 
-    public AdminController(UserService userService, PopulateCountries populateCountries) {
-
-
-        this.userService = userService;
+    public AdminController(PopulateCountries populateCountries) {
         this.populateCountries = populateCountries;
     }
 
@@ -64,7 +57,11 @@ public class AdminController {
 
     @RequestMapping(value = "/admin/delete", method = RequestMethod.DELETE)
     public ResponseEntity<Object> deleteUser(@RequestParam("id") int id) {
-        userService.deleteUser(id);
+        final String uri = "http://localhost:8081/restapi/deleteuser/{id}";
+        Map<String, Integer> params = new HashMap<>();
+        params.put("id", id);
+
+        new RestTemplate().delete(uri, params);
         return new ResponseEntity<>(HttpStatus.OK);
     }
 
@@ -73,11 +70,14 @@ public class AdminController {
         return new ResponseEntity<>(populateCountries.populateCountries(), HttpStatus.OK);
     }
 
-
     @RequestMapping(value = "/admin/insert", method = RequestMethod.PUT)
     @ResponseBody
-    public void addUpdateUser(@RequestBody User user) {
-        userService.createUser(user);
+    public void addUpdateUser(@RequestBody User user) throws URISyntaxException {
+        final String url = "http://localhost:8081/restapi/addupdateuser";
+        URI uri = new URI(url);
+        RestTemplate restTemplate = new RestTemplate();
+        Gson gson = new GsonBuilder().create();
+        restTemplate.put(uri, gson.toJson(user));
     }
 
 }

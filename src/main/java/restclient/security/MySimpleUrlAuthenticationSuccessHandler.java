@@ -9,14 +9,14 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.util.List;
+import java.util.Collection;
 
 public class MySimpleUrlAuthenticationSuccessHandler implements AuthenticationSuccessHandler {
     @Override
     public void onAuthenticationSuccess(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse, Authentication authentication) throws IOException, ServletException {
         User principal = (User) authentication.getPrincipal();
 
-        List<Role> roles = (List<Role>) principal.getGrantedAuthorities();
+        Collection<Role> roles = principal.getGrantedAuthorities();
 
         for (Role role : roles) {
             if (role.getAuthority().equals("ROLE_ADMIN")) {

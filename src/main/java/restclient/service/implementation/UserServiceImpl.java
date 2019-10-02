@@ -13,14 +13,11 @@ import java.util.List;
 @Service
 public class UserServiceImpl implements UserService {
 
- //   private final RoleDao roleDao;
     private final UserDao userDao;
 
-    public UserServiceImpl(UserDao userDao ){
-                           //RoleDao roleDao) {
-        this.userDao = userDao;
-  //      this.roleDao = roleDao;
+    public UserServiceImpl(UserDao userDao) {
 
+        this.userDao = userDao;
     }
 
     @Override
