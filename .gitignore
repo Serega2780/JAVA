@@ -3,3 +3,4 @@ CRUDApp*
 *.zip
 target
 *.iml
+lib
