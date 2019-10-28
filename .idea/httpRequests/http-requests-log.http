@@ -1,0 +1,20 @@
+POST http://localhost:8080/CRUDApp_war/delete&id=1
+Accept: */*
+Cache-Control: no-cache
+
+<> 2019-08-07T015435.200.html
+
+###
+
+POST http://localhost:8080/CRUDApp_war/list
+Accept: */*
+Cache-Control: no-cache
+
+###
+
+POST http://localhost:8080/CRUDApp_war/list
+Accept: */*
+Cache-Control: no-cache
+
+###
+

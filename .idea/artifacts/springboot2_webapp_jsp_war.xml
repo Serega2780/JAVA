@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="springboot2-webapp-jsp:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <module>springboot2-webapp-jsp</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="archive" name="springboot2-webapp-jsp-0.0.1-SNAPSHOT.war">
+      <element id="artifact" artifact-name="springboot2-webapp-jsp:war exploded" />
+    </root>
+  </artifact>
+</component>

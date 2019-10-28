@@ -1,4 +1,5 @@
-target
 CRUDApp*
-home.jsp
-CRUDApp.zip
+.idea
+*.zip
+target
+*.iml
