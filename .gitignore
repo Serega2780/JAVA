@@ -1,2 +1,7 @@
-target
 CRUDApp*
+.idea
+*.zip
+target
+*.iml
+logs
+
