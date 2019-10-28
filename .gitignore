@@ -1,1 +1,5 @@
-*test*
+CRUDApp*
+.idea
+*.zip
+target
+*.iml
