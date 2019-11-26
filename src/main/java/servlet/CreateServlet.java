@@ -30,6 +30,6 @@ public class CreateServlet extends HttpServlet {
         User newUser = new User(name, email, country);
         UserDaoFactory.getDaoFactory().createDAO().insertUser(newUser);
         response.sendRedirect("list");
-        // new UserDaoImplJDBC().insertUser(newUser);
+
     }
 }
