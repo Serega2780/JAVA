@@ -18,6 +18,7 @@ public class DBHelper {
     private static DBHelper INSTANCE;
     private final Connection connection;
     private final Configuration configuration;
+    private final SessionFactory sessionFactory;
 
     final static Logger logger = Logger.getLogger(DBHelper.class.getName());
 
@@ -25,7 +26,8 @@ public class DBHelper {
 
         this.connection = getMySQLConnection();
         this.configuration = getMySqlConfiguration();
-        // this.userDAOClass = getUserDAOClass();
+        this.sessionFactory = createSessionFactory();
+
     }
 
     public static DBHelper getInstance() {
@@ -48,6 +50,20 @@ public class DBHelper {
 
       return this.configuration;
     }
+
+    public SessionFactory getSessionFactory() {
+
+        return this.sessionFactory;
+    }
+
+    private SessionFactory createSessionFactory() {
+        //Configuration configuration = getConfiguration();
+        StandardServiceRegistryBuilder builder = new StandardServiceRegistryBuilder();
+        builder.applySettings(configuration.getProperties());
+        ServiceRegistry serviceRegistry = builder.build();
+        return configuration.buildSessionFactory(serviceRegistry);
+    }
+
 
     private static Connection getMySQLConnection() throws DBException {
         try {

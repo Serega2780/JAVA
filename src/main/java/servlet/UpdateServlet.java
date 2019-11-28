@@ -19,7 +19,7 @@ public class UpdateServlet extends HttpServlet {
 
     public void init() {
 //        userService = new UserServiceImpl(new UserDAOJdbc(DBHelper.getInstance().getConnection()));
-        userService = new UserServiceImpl(new UserDAOHibernate());
+        userService = new UserServiceImpl(new UserDAOHibernate(DBHelper.getInstance().getSessionFactory().openSession()));
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
