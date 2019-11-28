@@ -18,7 +18,7 @@ public class CreateServlet extends HttpServlet {
 
     public void init() {
 //        userService = new UserServiceImpl(new UserDAOJdbc(DBHelper.getInstance().getConnection()));
-        userService = new UserServiceImpl(new UserDAOHibernate(DBHelper.getInstance().getSessionFactory().openSession()));
+        userService = new UserServiceImpl(new UserDAOHibernate(DBHelper.getInstance().getSessionFactory()));
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response)

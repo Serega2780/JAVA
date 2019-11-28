@@ -14,12 +14,13 @@ public class UserDAOHibernate implements UserDAO {
     private Session session;
 
     public UserDAOHibernate(SessionFactory sessionFactory) {
-        this.session = session;
+        this.sessionFactory = sessionFactory;
+        this.session = sessionFactory.openSession();
     }
 
     @Override
     public void insertUser(User user) {
-        session = DBHelper.getInstance().getSessionFactory().openSession();
+        session = this.sessionFactory.openSession();
         Transaction transaction = session.beginTransaction();
         session.save(user);
         transaction.commit();
@@ -28,7 +29,7 @@ public class UserDAOHibernate implements UserDAO {
 
     @Override
     public User selectUser(int id) {
-        session = DBHelper.getInstance().getSessionFactory().openSession();
+        session = this.sessionFactory.openSession();
         User user;
         Transaction transaction = session.beginTransaction();
         Query query = session.createQuery("FROM User WHERE id = :id");
@@ -41,7 +42,7 @@ public class UserDAOHibernate implements UserDAO {
 
     @Override
     public List<User> selectAllUsers() {
-        session = DBHelper.getInstance().getSessionFactory().openSession();
+        session = this.sessionFactory.openSession();
         Transaction transaction = session.beginTransaction();
         List<User> allUsers = session.createQuery("FROM User").list();
         transaction.commit();
@@ -51,7 +52,7 @@ public class UserDAOHibernate implements UserDAO {
 
     @Override
     public boolean deleteUser(int id) {
-        session = DBHelper.getInstance().getSessionFactory().openSession();
+        session = this.sessionFactory.openSession();
         boolean rowDeleted = false;
         Transaction transaction = session.beginTransaction();
         Query query = session.createQuery("DELETE FROM User WHERE id = :id");
@@ -64,7 +65,7 @@ public class UserDAOHibernate implements UserDAO {
 
     @Override
     public void updateUser(User user) {
-        session = DBHelper.getInstance().getSessionFactory().openSession();
+        session = this.sessionFactory.openSession();
         Transaction transaction = session.beginTransaction();
         session.saveOrUpdate(user);
         transaction.commit();
