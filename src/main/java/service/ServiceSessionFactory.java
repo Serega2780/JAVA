@@ -1,24 +1,14 @@
-package DAO;
+package service;
 
 import org.hibernate.SessionFactory;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.cfg.Configuration;
 import org.hibernate.service.ServiceRegistry;
-import service.DBHelper;
 
-public class UserDaoFactoryImplHibernate extends UserDaoFactory {
-    private UserDAO userDAO;
-    private static SessionFactory sessionFactory;
+public class ServiceSessionFactory {
+    private SessionFactory sessionFactory;
 
-    @Override
-    public UserDAO createDAO() {
-        if (this.userDAO == null) {
-            this.userDAO = new UserDaoImplHibernate(getSessionFactory().openSession());
-        }
-        return this.userDAO;
-    }
-
-    private static SessionFactory createSessionFactory() {
+    private SessionFactory createSessionFactory() {
         Configuration configuration = DBHelper.getInstance().getConfiguration();
         StandardServiceRegistryBuilder builder = new StandardServiceRegistryBuilder();
         builder.applySettings(configuration.getProperties());
@@ -26,7 +16,7 @@ public class UserDaoFactoryImplHibernate extends UserDaoFactory {
         return configuration.buildSessionFactory(serviceRegistry);
     }
 
-    public static SessionFactory getSessionFactory() {
+    public SessionFactory getSessionFactory() {
         if (sessionFactory == null) {
             sessionFactory = createSessionFactory();
         }

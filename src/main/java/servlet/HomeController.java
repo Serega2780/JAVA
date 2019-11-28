@@ -1,7 +1,10 @@
 package servlet;
 
-import DAO.UserDaoFactory;
+import DAO.UserJdbcDAO;
 import model.User;
+import service.DBHelper;
+import service.UserService;
+import service.UserServiceJdbcImpl;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -16,29 +19,21 @@ import java.util.List;
 @WebServlet("/")
 public class HomeController extends HttpServlet {
 
+    private UserService userService;
+
     public void init() {
-
-     /*   userService = UserService.getInstance();
-        userService.getDAO().createTable();
-
-      */
-    }
-
-    protected void doPost(HttpServletRequest request, HttpServletResponse response)
-             {
-        //doGet(request, response);
-
+        userService = new UserServiceJdbcImpl(new UserJdbcDAO(DBHelper.getInstance().getConnection()));
+        //        userService = new UserServiceHibernateImpl(new UserHibernateDAO(new ServiceSessionFactory()
+//                .getSessionFactory().openSession()));
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
-        List<User> listUser = UserDaoFactory.getDaoFactory().createDAO().selectAllUsers();
+        List<User> listUser = userService.selectAllUsers();
         request.setAttribute("listUser", listUser);
         RequestDispatcher dispatcher = request.getRequestDispatcher("user-list.jsp");
         dispatcher.forward(request, response);
-
-
     }
 
 

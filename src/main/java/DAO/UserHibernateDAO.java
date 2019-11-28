@@ -7,13 +7,10 @@ import org.hibernate.Transaction;
 
 import java.util.List;
 
-public class UserDaoImplHibernate implements UserDAO {
-
-    private static final String SELECT_USER_BY_ID_HIBERNATE = "FROM User WHERE id = :id";
-    private static final String DELETE_USERS_HIBERNATE = "DELETE FROM User WHERE id = :id";
+public class UserHibernateDAO implements UserDAO {
     private Session session;
 
-    public UserDaoImplHibernate(Session session) {
+    public UserHibernateDAO(Session session) {
         this.session = session;
     }
 
@@ -29,14 +26,13 @@ public class UserDaoImplHibernate implements UserDAO {
     public User selectUser(int id) {
         User user;
         Transaction transaction = session.beginTransaction();
-        Query query = session.createQuery(SELECT_USER_BY_ID_HIBERNATE);
+        Query query = session.createQuery("FROM User WHERE id = :id");
         query.setParameter("id", id);
         user = (User) query.uniqueResult();
         transaction.commit();
         session.close();
         return user;
     }
-
 
     @Override
     public List<User> selectAllUsers() {
@@ -47,26 +43,22 @@ public class UserDaoImplHibernate implements UserDAO {
         return allUsers;
     }
 
-
     @Override
     public boolean deleteUser(int id) {
         boolean rowDeleted = false;
         Transaction transaction = session.beginTransaction();
-        Query query = session.createQuery(DELETE_USERS_HIBERNATE);
+        Query query = session.createQuery("DELETE FROM User WHERE id = :id");
         query.setParameter("id", id);
         rowDeleted = query.executeUpdate() > 0;
         transaction.commit();
         session.close();
         return rowDeleted;
-
     }
-
 
     @Override
     public void updateUser(User user) {
         Transaction transaction = session.beginTransaction();
         session.saveOrUpdate(user);
-
         transaction.commit();
         session.close();
     }

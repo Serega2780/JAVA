@@ -1,7 +1,10 @@
 package servlet;
 
-import DAO.UserDaoFactory;
+import DAO.UserJdbcDAO;
 import model.User;
+import service.DBHelper;
+import service.UserService;
+import service.UserServiceJdbcImpl;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -13,18 +16,26 @@ import java.io.IOException;
 
 @WebServlet({"/edit", "/update"})
 public class UpdateServlet extends HttpServlet {
+
+    private UserService userService;
+
+    public void init() {
+        userService = new UserServiceJdbcImpl(new UserJdbcDAO(DBHelper.getInstance().getConnection()));
+        //        userService = new UserServiceHibernateImpl(new UserHibernateDAO(new ServiceSessionFactory()
+//                .getSessionFactory().openSession()));
+    }
+
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         int id = Integer.parseInt(request.getParameter("id"));
-        User existingUser = UserDaoFactory.getDaoFactory().createDAO().selectUser(id);
+        User existingUser = userService.selectUser(id);
         RequestDispatcher dispatcher = request.getRequestDispatcher("user-form.jsp");
         request.setAttribute("user", existingUser);
         dispatcher.forward(request, response);
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-        //ServletActions.updateUser(request, response, true);
+            throws IOException {
 
         int id = Integer.parseInt(request.getParameter("id"));
         String name = request.getParameter("name");
@@ -32,7 +43,7 @@ public class UpdateServlet extends HttpServlet {
         String country = request.getParameter("country");
 
         User user = new User(id, name, email, country);
-        UserDaoFactory.getDaoFactory().createDAO().updateUser(user);
+        userService.updateUser(user);
         response.sendRedirect("list");
 
     }

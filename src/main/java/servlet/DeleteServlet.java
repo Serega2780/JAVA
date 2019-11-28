@@ -1,8 +1,10 @@
 package servlet;
 
-import DAO.UserDaoFactory;
+import DAO.UserJdbcDAO;
+import service.DBHelper;
+import service.UserService;
+import service.UserServiceJdbcImpl;
 
-import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -11,13 +13,18 @@ import java.io.IOException;
 
 @WebServlet("/delete")
 public class DeleteServlet extends HttpServlet {
+    private UserService userService;
+
+    public void init() {
+        userService = new UserServiceJdbcImpl(new UserJdbcDAO(DBHelper.getInstance().getConnection()));
+        //        userService = new UserServiceHibernateImpl(new UserHibernateDAO(new ServiceSessionFactory()
+//                .getSessionFactory().openSession()));
+    }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-
+            throws IOException {
         int id = Integer.parseInt(request.getParameter("id"));
-        UserDaoFactory.getDaoFactory().createDAO().deleteUser(id);
+        userService.deleteUser(id);
         response.sendRedirect("list");
-
     }
 }

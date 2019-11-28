@@ -1,9 +1,8 @@
 package servlet;
 
-import DAO.UserDaoFactory;
-import DAO.UserDaoFactoryImplJDBC;
-import DAO.UserDaoImplJDBC;
+import DAO.UserJdbcDAO;
 import model.User;
+import service.*;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -15,6 +14,14 @@ import java.io.IOException;
 
 @WebServlet({"/new", "/insert"})
 public class CreateServlet extends HttpServlet {
+    private UserService userService;
+
+    public void init() {
+        userService = new UserServiceJdbcImpl(new UserJdbcDAO(DBHelper.getInstance().getConnection()));
+//        userService = new UserServiceHibernateImpl(new UserHibernateDAO(new ServiceSessionFactory()
+//                .getSessionFactory().openSession()));
+    }
+
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         RequestDispatcher dispatcher = request.getRequestDispatcher("user-form.jsp");
@@ -22,13 +29,12 @@ public class CreateServlet extends HttpServlet {
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-        //   ServletActions.insertUser(request, response,true);
+            throws IOException {
         String name = request.getParameter("name");
         String email = request.getParameter("email");
         String country = request.getParameter("country");
         User newUser = new User(name, email, country);
-        UserDaoFactory.getDaoFactory().createDAO().insertUser(newUser);
+        userService.createUser(newUser);
         response.sendRedirect("list");
 
     }
