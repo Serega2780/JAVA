@@ -8,10 +8,10 @@ import service.ServiceSessionFactory;
 
 import java.util.List;
 
-public class UserHibernateDAO implements UserDAO {
+public class UserDAOHibernate implements UserDAO {
     private Session session;
 
-    public UserHibernateDAO() {
+    public UserDAOHibernate() {
 
     }
 
