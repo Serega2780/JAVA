@@ -1,10 +1,9 @@
 package servlet;
 
+import DAO.UserHibernateDAO;
 import DAO.UserJdbcDAO;
 import model.User;
-import service.DBHelper;
-import service.UserService;
-import service.UserServiceJdbcImpl;
+import service.*;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -20,9 +19,9 @@ public class UpdateServlet extends HttpServlet {
     private UserService userService;
 
     public void init() {
-        userService = new UserServiceJdbcImpl(new UserJdbcDAO(DBHelper.getInstance().getConnection()));
-        //        userService = new UserServiceHibernateImpl(new UserHibernateDAO(new ServiceSessionFactory()
-//                .getSessionFactory().openSession()));
+//        userService = new UserServiceJdbcImpl(new UserJdbcDAO(DBHelper.getInstance().getConnection()));
+                userService = new UserServiceHibernateImpl(new UserHibernateDAO(new ServiceSessionFactory()
+                        .getSessionFactory().openSession()));
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response)

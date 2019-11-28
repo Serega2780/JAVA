@@ -1,5 +1,6 @@
 package servlet;
 
+import DAO.UserHibernateDAO;
 import DAO.UserJdbcDAO;
 import model.User;
 import service.*;
@@ -17,9 +18,9 @@ public class CreateServlet extends HttpServlet {
     private UserService userService;
 
     public void init() {
-        userService = new UserServiceJdbcImpl(new UserJdbcDAO(DBHelper.getInstance().getConnection()));
-//        userService = new UserServiceHibernateImpl(new UserHibernateDAO(new ServiceSessionFactory()
-//                .getSessionFactory().openSession()));
+//        userService = new UserServiceJdbcImpl(new UserJdbcDAO(DBHelper.getInstance().getConnection()));
+        userService = new UserServiceHibernateImpl(new UserHibernateDAO(new ServiceSessionFactory()
+                .getSessionFactory().openSession()));
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
