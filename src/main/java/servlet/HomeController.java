@@ -1,6 +1,7 @@
 package servlet;
 
 import DAO.UserDAOHibernate;
+import DAO.UserDaoFactory;
 import model.User;
 import service.*;
 
@@ -20,8 +21,7 @@ public class HomeController extends HttpServlet {
     private UserService userService;
 
     public void init() {
-//        userService = new UserServiceImpl(new UserDAOJdbc(DBHelper.getInstance().getConnection()));
-                userService = new UserServiceImpl(new UserDAOHibernate(DBHelper.getInstance().getSessionFactory()));
+        userService = new UserServiceImpl(new UserDaoFactory().getUserDAO());
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
