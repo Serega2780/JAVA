@@ -1,10 +1,8 @@
 package DAO;
 
 import model.User;
-import org.hibernate.Query;
-import org.hibernate.Session;
-import org.hibernate.SessionFactory;
-import org.hibernate.Transaction;
+import org.hibernate.*;
+import service.DBException;
 import service.DBHelper;
 
 import java.util.List;
@@ -19,56 +17,89 @@ public class UserDAOHibernate implements UserDAO {
     }
 
     @Override
-    public void insertUser(User user) {
+    public void insertUser(User user) throws DBException {
         session = this.sessionFactory.openSession();
         Transaction transaction = session.beginTransaction();
-        session.save(user);
-        transaction.commit();
-        session.close();
+        try {
+            session.save(user);
+            transaction.commit();
+        } catch (HibernateException e) {
+            transaction.rollback();
+            throw new DBException("An error during save operation...");
+        } finally {
+            session.close();
+        }
     }
 
     @Override
-    public User selectUser(int id) {
+    public User selectUser(int id) throws DBException {
         session = this.sessionFactory.openSession();
         User user;
         Transaction transaction = session.beginTransaction();
         Query query = session.createQuery("FROM User WHERE id = :id");
         query.setParameter("id", id);
-        user = (User) query.uniqueResult();
-        transaction.commit();
-        session.close();
+        try {
+            user = (User) query.uniqueResult();
+            transaction.commit();
+        } catch (HibernateException e) {
+            transaction.rollback();
+            throw new DBException("An error during select operation...");
+        } finally {
+            session.close();
+        }
+
         return user;
     }
 
     @Override
-    public List<User> selectAllUsers() {
+    public List<User> selectAllUsers() throws DBException {
         session = this.sessionFactory.openSession();
         Transaction transaction = session.beginTransaction();
-        List<User> allUsers = session.createQuery("FROM User").list();
-        transaction.commit();
-        session.close();
+        List<User> allUsers;
+        try {
+            allUsers = session.createQuery("FROM User").list();
+            transaction.commit();
+        } catch (HibernateException e) {
+            transaction.rollback();
+            throw new DBException("An error during select all operation...");
+        } finally {
+            session.close();
+        }
         return allUsers;
     }
 
     @Override
-    public boolean deleteUser(int id) {
+    public boolean deleteUser(int id) throws DBException {
         session = this.sessionFactory.openSession();
         boolean rowDeleted = false;
         Transaction transaction = session.beginTransaction();
         Query query = session.createQuery("DELETE FROM User WHERE id = :id");
         query.setParameter("id", id);
-        rowDeleted = query.executeUpdate() > 0;
-        transaction.commit();
-        session.close();
+        try {
+            rowDeleted = query.executeUpdate() > 0;
+            transaction.commit();
+        } catch (HibernateException e) {
+            transaction.rollback();
+            throw new DBException("An error during delete operation...");
+        } finally {
+            session.close();
+        }
         return rowDeleted;
     }
 
     @Override
-    public void updateUser(User user) {
+    public void updateUser(User user) throws DBException {
         session = this.sessionFactory.openSession();
         Transaction transaction = session.beginTransaction();
-        session.saveOrUpdate(user);
-        transaction.commit();
-        session.close();
+        try {
+            session.saveOrUpdate(user);
+            transaction.commit();
+        } catch (HibernateException e) {
+            transaction.rollback();
+            throw new DBException("An error during update operation...");
+        } finally {
+            session.close();
+        }
+
     }
 }

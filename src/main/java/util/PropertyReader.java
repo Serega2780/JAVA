@@ -5,12 +5,13 @@ import service.DBException;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.io.InputStream;
 import java.util.Properties;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
 public class PropertyReader {
-//    private static PropertyReader INSTANCE;
+    //    private static PropertyReader INSTANCE;
     private static final String fileName = "Dao.properties";
     private static Properties properties;
 
@@ -35,16 +36,14 @@ public class PropertyReader {
     }
 
     private static Properties readProp() {
-        Properties plan = new Properties();
-        File f = new File(fileName);
-        logger.info(f.getAbsolutePath());
-        logger.info(String.format("Present Project Directory : %s", System.getProperty("user.dir")));
-
-        try (FileInputStream fin = new FileInputStream(fileName)) {
-            plan.load(fin);
+        ClassLoader classLoader = Thread.currentThread().getContextClassLoader();
+        try (InputStream input = classLoader.getResourceAsStream(fileName)) {
+            properties = new Properties();
+            properties.load(input);
         } catch (IOException e) {
             logger.severe("File issues...");
         }
-        return plan;
+
+        return properties;
     }
 }
