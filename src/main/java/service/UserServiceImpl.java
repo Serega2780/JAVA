@@ -6,11 +6,11 @@ import model.User;
 import java.util.List;
 import java.util.logging.Logger;
 
-public class UserServiceJdbcImpl implements UserService {
-    private static final Logger logger = Logger.getLogger(UserServiceJdbcImpl.class.getName());
+public class UserServiceImpl implements UserService {
+    private static final Logger logger = Logger.getLogger(UserServiceImpl.class.getName());
     private UserDAO userDAO;
 
-    public UserServiceJdbcImpl(UserDAO userDAO) {
+    public UserServiceImpl(UserDAO userDAO) {
         this.userDAO = userDAO;
     }
 
@@ -60,7 +60,5 @@ public class UserServiceJdbcImpl implements UserService {
         } catch (DBException e) {
             logger.severe(e.getMessage());
         }
-
     }
-
 }
