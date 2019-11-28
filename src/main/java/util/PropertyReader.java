@@ -10,11 +10,11 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 public class PropertyReader {
-    private static PropertyReader INSTANCE;
+//    private static PropertyReader INSTANCE;
     private static final String fileName = "Dao.properties";
-//    private final Properties properties;
+    private static Properties properties;
 
-    final static Logger logger = Logger.getLogger(PropertyReader.class.getName());
+    private final static Logger logger = Logger.getLogger(PropertyReader.class.getName());
 
 //    private PropertyReader() {
 //        this.properties = readProp();
@@ -28,7 +28,10 @@ public class PropertyReader {
 //    }
 
     public static String getProperty(String propertyName) {
-        return readProp().getProperty(propertyName);
+        if (properties == null) {
+            properties = readProp();
+        }
+        return properties.getProperty(propertyName);
     }
 
     private static Properties readProp() {

@@ -16,8 +16,7 @@ public class DeleteServlet extends HttpServlet {
 
     public void init() {
 //        userService = new UserServiceJdbcImpl(new UserJdbcDAO(DBHelper.getInstance().getConnection()));
-                userService = new UserServiceHibernateImpl(new UserHibernateDAO(new ServiceSessionFactory()
-                        .getSessionFactory().openSession()));
+                userService = new UserServiceHibernateImpl(new UserHibernateDAO());
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response)

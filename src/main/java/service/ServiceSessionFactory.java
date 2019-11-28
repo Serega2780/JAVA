@@ -6,9 +6,9 @@ import org.hibernate.cfg.Configuration;
 import org.hibernate.service.ServiceRegistry;
 
 public class ServiceSessionFactory {
-    private SessionFactory sessionFactory;
+    private static SessionFactory sessionFactory;
 
-    private SessionFactory createSessionFactory() {
+    private static SessionFactory createSessionFactory() {
         Configuration configuration = DBHelper.getInstance().getConfiguration();
         StandardServiceRegistryBuilder builder = new StandardServiceRegistryBuilder();
         builder.applySettings(configuration.getProperties());
@@ -16,7 +16,7 @@ public class ServiceSessionFactory {
         return configuration.buildSessionFactory(serviceRegistry);
     }
 
-    public SessionFactory getSessionFactory() {
+    public static SessionFactory getSessionFactory() {
         if (sessionFactory == null) {
             sessionFactory = createSessionFactory();
         }

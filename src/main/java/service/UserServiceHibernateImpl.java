@@ -14,7 +14,6 @@ import java.util.logging.Logger;
 public class UserServiceHibernateImpl implements UserService {
     private static final Logger logger = Logger.getLogger(UserServiceHibernateImpl.class.getName());
     private UserDAO userDAO;
-    private static SessionFactory sessionFactory;
 
     public UserServiceHibernateImpl(UserDAO userDAO) {
         this.userDAO = userDAO;
